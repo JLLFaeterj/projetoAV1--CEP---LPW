@@ -82,6 +82,12 @@ button  {
   color: #000;
 }
 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 
 div {
   margin: 12px 0 12px 0;  

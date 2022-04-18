@@ -3,7 +3,8 @@ import ModelError from "/ModelError.js";
 export default class Aluno {
     
   //
-  // ATRIBUTOS PRIVADOS
+  // DECLARAÇÃO DE ATRIBUTOS PRIVADOS: Em JavaScript, se o nome do atributo tem # no início, isso 
+  // indica que ele é privado. Também deve-se colocar a presença dele destacada, como está abaixo.
   //
   #matricula;
   #cpf;
@@ -21,12 +22,6 @@ export default class Aluno {
     this.setTelefone(telefone);      
   }
   
-  //-----------------------------------------------------------------------------------------//
-
-  static assign(obj) {
-    return new Aluno(obj.matricula, obj.cpf, obj.nome, obj.email, obj.telefone);
-  }
-
   //-----------------------------------------------------------------------------------------//
 
   getMatricula() {
@@ -102,13 +97,25 @@ export default class Aluno {
   toJSON() {
     return '{' +
                '"matricula" : "'+ this.#matricula + '",' +
-               '"cpf" :  "'     + this.#cpf       + '", ' +
-               '"nome" : "'     + this.#nome      + '", ' +
-               '"email" : "'    + this.#email     + '", ' +
-               '"telefone" : "' + this.#telefone  + '", ' + 
+               '"cpf" :  "'     + this.#cpf       + '",' +
+               '"nome" : "'     + this.#nome      + '",' +
+               '"email" : "'    + this.#email     + '",' +
+               '"telefone" : "' + this.#telefone  + '" ' + 
            '}';  
   }
   
+  //-----------------------------------------------------------------------------------------//
+
+  static assign(obj) {
+    return new Aluno(obj.matricula, obj.cpf, obj.nome, obj.email, obj.telefone);
+  }
+
+  //-----------------------------------------------------------------------------------------//
+  
+  static deassign(obj) { 
+    return JSON.parse(obj.toJSON());
+  }
+
   //-----------------------------------------------------------------------------------------//
 
   static validarMatricula(matr) {
