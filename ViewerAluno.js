@@ -214,13 +214,13 @@ function fnBtOk() {
   // não estou precisando colocar os ninhos de IF abaixo.
   this.viewer.getCtrl().efetivar(matricula, cpf, nome, email, telefone); 
 
-   if(this.viewer.getCtrl().getStatus() == Status.INCLUINDO) {
-    this.viewer.getCtrl().fnEfetivar(matricula, cpf, nome, email, telefone); 
-  } else if(this.viewer.getCtrl().getStatus() == Status.ALTERANDO) {
-    this.viewer.getCtrl().alterar(matricula, cpf, nome, email, telefone); 
-  } else if(this.viewer.getCtrl().getStatus() == Status.EXCLUINDO) {
-    this.viewer.getCtrl().excluir(matricula, cpf, nome, email, telefone); 
-  }
+  // if(this.viewer.getCtrl().getStatus() == Status.INCLUINDO) {
+  //  this.viewer.getCtrl().fnEfetivar(matricula, cpf, nome, email, telefone); 
+  //} else if(this.viewer.getCtrl().getStatus() == Status.ALTERANDO) {
+  //  this.viewer.getCtrl().alterar(matricula, cpf, nome, email, telefone); 
+  //} else if(this.viewer.getCtrl().getStatus() == Status.EXCLUINDO) {
+  //  this.viewer.getCtrl().excluir(matricula, cpf, nome, email, telefone); 
+  //}
 }
 
 //------------------------------------------------------------------------//
