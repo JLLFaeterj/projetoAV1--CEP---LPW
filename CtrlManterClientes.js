@@ -68,7 +68,7 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
 
   async apresentarProximo() {
     let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-    if(this.#posAtual < conjAlunos.length)
+    if(this.#posAtual < conjClientes.length)  //Alterado 'conjAlunos' para 'conjClientes'
       this.#posAtual++;
     this.#atualizarContextoNavegacao();
   }
@@ -76,7 +76,7 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   //-----------------------------------------------------------------------------------------//
 
   async apresentarAnterior() {
-    let conjAlunos = await this.#dao.obterAlunos();
+    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
     if(this.#posAtual > 1)
       this.#posAtual--;
     this.#atualizarContextoNavegacao();
@@ -85,8 +85,8 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   //-----------------------------------------------------------------------------------------//
 
   async apresentarUltimo() {
-    let conjAlunos = await this.#dao.obterAlunos();
-    this.#posAtual = conjAlunos.length;
+    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
+    this.#posAtual = conjClientes.length;  //Alterado 'conjAlunos' para 'conjClientes'
     this.#atualizarContextoNavegacao();
   }
 
@@ -128,8 +128,8 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   async incluir(matr, cpf, nome, email, telefone) {
     if(this.#status == Status.INCLUINDO) {
       try {
-        let aluno = new Aluno(matr, cpf, nome, email, telefone);
-        await this.#dao.incluir(aluno); 
+        let cliente = new Cliente(matr, cpf, nome, email, telefone);  //Alterado 'aluno' para 'cliente'. Maiúsculas e minúsculas (classe e variável)
+        await this.#dao.incluir(cliente);  //Alterado 'aluno' para 'cliente'
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
       }
@@ -144,7 +144,7 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   async alterar(matr, cpf, nome, email, telefone) {
     if(this.#status == Status.ALTERANDO) {
       try {
-        let aluno = await this.#dao.obterAlunoPelaMatricula(matr); 
+        let cliente = await this.#dao.obterClientePelaMatricula(matr);   //Alterado 'aluno' para 'cliente' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
         if(aluno == null) {
           alert("Aluno com a matrícula " + matr + " não encontrado.");
         } else {
