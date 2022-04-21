@@ -31,12 +31,10 @@ body {
   /*background-color: var(--color-bg);*/
 }
 
-/*img {
-  background-image: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
-}*/
-
 .bg {
   background-image: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 header {  
