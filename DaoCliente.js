@@ -119,8 +119,8 @@ export default class DaoCliente {
       let transacao;
       let store;
       try {
-        transacao = connection.transaction(["AlunoST"], "readonly");
-        store = transacao.objectStore("AlunoST");
+        transacao = connection.transaction(["ClienteST"], "readonly"); //Alterado 'AlunoST' para 'ClienteST'.
+        store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'.
       } 
       catch (e) {
         reject(new ModelError("Erro: " + e));
@@ -129,7 +129,7 @@ export default class DaoCliente {
       store.openCursor().onsuccess = function(event) {
         var cursor = event.target.result;
         if (cursor) {        
-          const novo = Aluno.assign(cursor.value);
+          const novo = Cliente.assign(cursor.value);  //Alterado 'Aluno' para 'Cliente'.
           array.push(novo);
           cursor.continue();
         } else {
@@ -137,21 +137,21 @@ export default class DaoCliente {
         }
       };
     });
-    this.arrayAlunos = await promessa;
-    return this.arrayAlunos;
+    this.arrayClientes = await promessa;  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'
+    return this.arrayClientes;  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'
   }
 
   //-----------------------------------------------------------------------------------------//
 
-  async incluir(aluno) {
+  async incluir(cliente) {  //Alterado 'aluno' para 'cliente'
     let connection = await this.obterConexao();      
     let resultado = new Promise( (resolve, reject) => {
-      let transacao = connection.transaction(["AlunoST"], "readwrite");
+      let transacao = connection.transaction(["ClienteST"], "readwrite");  //Alterado 'AlunoST' para 'ClienteST'.
       transacao.onerror = event => {
-        reject(new ModelError("Não foi possível incluir o aluno", event.target.error));
+        reject(new ModelError("Não foi possível incluir o cliente", event.target.error));
       };
-      let store = transacao.objectStore("AlunoST");
-      let requisicao = store.add(Aluno.deassign(aluno));
+      let store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'.
+      let requisicao = store.add(Cliente.deassign(cliente));  //Alterado 'aluno' para 'cliente'. Minúsculo e maiúsculo.
       requisicao.onsuccess = function(event) {
           resolve(true);              
       };
@@ -161,21 +161,21 @@ export default class DaoCliente {
 
   //-----------------------------------------------------------------------------------------//
 
-  async alterar(aluno) {
+  async alterar(cliente) { //Alterado 'aluno' para 'cliente'
     let connection = await this.obterConexao();      
     let resultado = new Promise(function(resolve, reject) {
-      let transacao = connection.transaction(["AlunoST"], "readwrite");
+      let transacao = connection.transaction(["ClienteST"], "readwrite");  //Alterado 'AlunoST' para 'ClienteST'
       transacao.onerror = event => {
-        reject(new ModelError("Não foi possível alterar o aluno", event.target.error));
+        reject(new ModelError("Não foi possível alterar o cliente", event.target.error)); //Alterado 'aluno' para 'cliente'
       };
-      let store = transacao.objectStore("AlunoST");     
+      let store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'   
       let indice = store.index('idxMatricula');
-      var keyValue = IDBKeyRange.only(aluno.getMatricula());
+      var keyValue = IDBKeyRange.only(cliente.getMatricula());  //Alterado 'aluno' para 'cliente'
       indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
-          if (cursor.value.matricula == aluno.getMatricula()) {
-            const request = cursor.update(Aluno.deassign(aluno));
+          if (cursor.value.matricula == cliente.getMatricula()) {  //Alterado 'aluno' para 'cliente'
+            const request = cursor.update(Cliente.deassign(cliente));  //Alterado 'aluno' para 'cliente'. Minúsculo e maiúsculo.
             request.onsuccess = () => {
               console.log("[DaoAluno.alterar] Cursor update - Sucesso ");
               resolve("Ok");
