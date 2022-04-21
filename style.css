@@ -1,5 +1,5 @@
 /* Our default values set as CSS variables */
-:root {
+/*:root {
   --color-bg: #69F7BE;
   --color-text-main: #000000;
   --color-primary: #FFFF00;
@@ -29,7 +29,7 @@
 body {
   font-family: HKGrotesk;
   /*background-color: var(--color-bg);*/
-}
+/*}*/
 /*
 .bg {
   background-image: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
@@ -98,3 +98,6 @@ button[disabled]{
 div {
   margin: 12px 0 12px 0;  
 } */
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Work+Sans:wght@600&display=swap');
+
