@@ -115,4 +115,27 @@ body {
 
 .cabecalho {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 32px;
+}
+
+.cabecalho-logo {
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 32px;
 }
