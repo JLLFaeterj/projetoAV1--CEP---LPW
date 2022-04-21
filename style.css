@@ -28,7 +28,8 @@
 
 body {
   font-family: HKGrotesk;
-  background-color: var(--color-bg);
+  /*background-color: var(--color-bg);*/
+  background-image: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
 }
 
 header {  
