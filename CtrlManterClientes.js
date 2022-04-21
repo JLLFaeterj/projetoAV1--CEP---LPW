@@ -145,14 +145,14 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
     if(this.#status == Status.ALTERANDO) {
       try {
         let cliente = await this.#dao.obterClientePelaMatricula(matr);   //Alterado 'aluno' para 'cliente' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-        if(aluno == null) {
-          alert("Aluno com a matrícula " + matr + " não encontrado.");
+        if(cliente == null) {  //Alterado 'aluno' para 'cliente'
+          alert("Cliente com a matrícula " + matr + " não encontrado.");  //Alterado 'Aluno' para 'Cliente'
         } else {
-          aluno.setCpf(cpf);
-          aluno.setNome(nome);
-          aluno.setEmail(email);
-          aluno.setTelefone(telefone);
-          await this.#dao.alterar(aluno); 
+          cliente.setCpf(cpf);  //Alterado 'aluno' para 'cliente'
+          cliente.setNome(nome);  //Alterado 'aluno' para 'cliente'
+          cliente.setEmail(email);  //Alterado 'aluno' para 'cliente'
+          cliente.setTelefone(telefone);  //Alterado 'aluno' para 'cliente'
+          await this.#dao.alterar(cliente);   //Alterado 'aluno' para 'cliente'
         }
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
@@ -168,11 +168,11 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   async excluir(matr) {
     if(this.#status == Status.EXCLUINDO) {
       try {
-        let aluno = await this.#dao.obterAlunoPelaMatricula(matr); 
-        if(aluno == null) {
-          alert("Aluno com a matrícula " + matr + " não encontrado.");
+        let cliente = await this.#dao.obterClientePelaMatricula(matr);   //Alterado 'aluno' para 'cliente' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
+        if(cliente == null) {  //Alterado 'Aluno' para 'Cliente'
+          alert("Cliente com a matrícula " + matr + " não encontrado.");
         } else {
-          await this.#dao.excluir(aluno); 
+          await this.#dao.excluir(cliente);  //Alterado 'Aluno' para 'Cliente'
         }
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();

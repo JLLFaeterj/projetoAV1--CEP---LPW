@@ -1,6 +1,6 @@
 "use strict";
 
-import CtrlManterAlunos from "/CtrlManterAlunos.js";
+import CtrlManterClientes from "/CtrlManterClientes.js";  //Alterado 'CtrlManterAlunos.js' (e sem js) para 'CtrlManterClientes'
 
 export default class CtrlSessao {
   
