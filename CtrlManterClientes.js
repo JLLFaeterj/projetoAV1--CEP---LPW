@@ -1,11 +1,11 @@
 "use strict";
 
 import Status from "/Status.js";
-import Aluno from "/Aluno.js";
-import DaoAluno from "/DaoAluno.js";
-import ViewerAluno from "/ViewerAluno.js";
+import Cliente from "/Cliente.js";   //Alterado 'Aluno' para 'Cliente'
+import DaoCliente from "/DaoCliente.js";  //Alterado 'DaoAluno' para 'DaoCliente'
+import ViewerCliente from "/ViewerCliente.js";  //Alterado 'ViewerAluno' para 'ViewerCliente'
 
-export default class CtrlManterAlunos {
+export default class CtrlManterClientes {  //Alterando o nome da classe para 'CtrlManterClientes'
   
   //-----------------------------------------------------------------------------------------//
 
@@ -20,7 +20,7 @@ export default class CtrlManterAlunos {
   //-----------------------------------------------------------------------------------------//
 
   constructor() {
-    this.#dao = new DaoAluno();
+    this.#dao = new DaoCliente();  //Alterado 'DaoAluno' para 'DaoCliente'
     this.#viewer = new ViewerAluno(this);
     this.#posAtual = 1;
     this.#atualizarContextoNavegacao();    
