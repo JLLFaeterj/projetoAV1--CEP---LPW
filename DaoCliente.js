@@ -177,13 +177,13 @@ export default class DaoCliente {
           if (cursor.value.matricula == cliente.getMatricula()) {  //Alterado 'aluno' para 'cliente'
             const request = cursor.update(Cliente.deassign(cliente));  //Alterado 'aluno' para 'cliente'. Minúsculo e maiúsculo.
             request.onsuccess = () => {
-              console.log("[DaoAluno.alterar] Cursor update - Sucesso ");
+              console.log("[DaoCliente.alterar] Cursor update - Sucesso ");  //Alterado 'DaoAluno' para 'DaoCliente'
               resolve("Ok");
               return;
             };
           } 
         } else {
-          reject(new ModelError("Aluno com a matrícula " + aluno.getMatricula() + " não encontrado!",""));
+          reject(new ModelError("Cliente com a matrícula " + cliente.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Cliente'. Minúsculo e maiúsculo.
         }
       };
     });
@@ -192,20 +192,20 @@ export default class DaoCliente {
   
   //-----------------------------------------------------------------------------------------//
 
-  async excluir(aluno) {
+  async excluir(cliente) {  //Alterado 'aluno' para 'cliente'
     let connection = await this.obterConexao();      
     let transacao = await new Promise(function(resolve, reject) {
-      let transacao = connection.transaction(["AlunoST"], "readwrite");
+      let transacao = connection.transaction(["ClienteST"], "readwrite");  //Alterado 'AlunoST' para 'ClienteST'
       transacao.onerror = event => {
-        reject(new ModelError("Não foi possível excluir o aluno", event.target.error));
+        reject(new ModelError("Não foi possível excluir o cliente", event.target.error));  //Alterado 'aluno' para 'cliente'
       };
-      let store = transacao.objectStore("AlunoST");
+      let store = transacao.objectStore("ClienteST");   //Alterado 'AlunoST' para 'ClienteST'
       let indice = store.index('idxMatricula');
-      var keyValue = IDBKeyRange.only(aluno.getMatricula());
+      var keyValue = IDBKeyRange.only(cliente.getMatricula());  //Alterado 'aluno' para 'cliente'
       indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
-          if (cursor.value.matricula == aluno.getMatricula()) {
+          if (cursor.value.matricula == cliente.getMatricula()) {  //Alterado 'aluno' para 'cliente'
             const request = cursor.delete();
             request.onsuccess = () => { 
               resolve("Ok"); 
@@ -213,7 +213,7 @@ export default class DaoCliente {
             return;
           }
         } else {
-          reject(new ModelError("Aluno com a matrícula " + aluno.getMatricula() + " não encontrado!",""));
+          reject(new ModelError("Cliente com a matrícula " + cliente.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Cliente'. Minúsculo e maiúsculo.
         }
       };
     });
