@@ -1,16 +1,16 @@
 "use strict";
 
 import ModelError from "/ModelError.js";
-import Aluno from "/Aluno.js";
+import Cliente from "/Cliente.js";
 
-export default class DaoAluno {
+export default class DaoCliente {
   
   //-----------------------------------------------------------------------------------------//
 
   static conexao = null;
 
   constructor() {
-    this.arrayAlunos = [];
+    this.arrayClientes = [];  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'
     this.obterConexao();
   }
 
@@ -20,13 +20,13 @@ export default class DaoAluno {
    *  Devolve uma Promise com a referência para o BD
    */ 
   async obterConexao() {
-    if(DaoAluno.conexao == null) {
-      DaoAluno.conexao = new Promise(function(resolve, reject) {
-        let requestDB = window.indexedDB.open("AlunoDB", 1); 
+    if(DaoCliente.conexao == null) {  //Alterado 'DaoAluno' para 'DaoCliente'.
+      DaoCliente.conexao = new Promise(function(resolve, reject) {
+        let requestDB = window.indexedDB.open("ClienteDB", 1);   //Alterado 'AlunoDB' para 'ClienteDB'.
 
         requestDB.onupgradeneeded = (event) => {
           let db = event.target.result;
-          let store = db.createObjectStore("AlunoST", {
+          let store = db.createObjectStore("ClienteST", {  //Alterado 'AlunoST' para 'ClienteST'.
             autoIncrement: true
           });
           store.createIndex("idxMatricula", "matricula", { unique: true });
@@ -46,7 +46,7 @@ export default class DaoAluno {
         };
       });
     }
-    return await DaoAluno.conexao;
+    return await DaoCliente.conexao;  //Alterado 'DaoAluno' para 'DaoCliente'.
   }
   
   //-----------------------------------------------------------------------------------------//

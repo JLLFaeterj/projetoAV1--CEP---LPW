@@ -7,7 +7,7 @@ export default class CtrlSessao {
   //-----------------------------------------------------------------------------------------//
   
   constructor() {
-    this.ctrlAtual = new CtrlManterAlunos();
+    this.ctrlAtual = new CtrlManterClientes();  //Alterado método 'CtrlManterAlunos()' para 'CtrlManterClientes()'
   }
   
   //-----------------------------------------------------------------------------------------//
