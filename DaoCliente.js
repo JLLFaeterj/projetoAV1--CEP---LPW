@@ -51,15 +51,15 @@ export default class DaoCliente {
   
   //-----------------------------------------------------------------------------------------//
 
-  async obterAlunos() {
+  async obterClientes() {  //Alterado 'obterAlunos()' para 'obterClientes()'.
     let connection = await this.obterConexao();      
     let promessa = new Promise(function(resolve, reject) {
       let transacao;
       let store;
       let indice;
       try {
-        transacao = connection.transaction(["AlunoST"], "readonly");
-        store = transacao.objectStore("AlunoST");
+        transacao = connection.transaction(["ClienteST"], "readonly"); //Alterado 'AlunoST' para 'ClienteST'.
+        store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'.
         indice = store.index('idxMatricula');
       } 
       catch (e) {
@@ -69,7 +69,7 @@ export default class DaoCliente {
       indice.openCursor().onsuccess = function(event) {
         var cursor = event.target.result;
         if (cursor) {        
-          const novo = Aluno.assign(cursor.value);
+          const novo = Cliente.assign(cursor.value);  //Alterado 'Aluno' para 'Cliente'.
           array.push(novo);
           cursor.continue();
         } else {
@@ -77,21 +77,21 @@ export default class DaoCliente {
         }
       };
     });
-    this.arrayAlunos = await promessa;
-    return this.arrayAlunos;
+    this.arrayClientes = await promessa;  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'.
+    return this.arrayClientes;  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'.
   }
 
   //-----------------------------------------------------------------------------------------//
 
-  async obterAlunoPelaMatricula(matr) {
+  async obterClientePelaMatricula(matr) {  //Alterado 'obterAlunoPelaMatricula' para 'obterClientePelaMatricula'
     let connection = await this.obterConexao();      
     let promessa = new Promise(function(resolve, reject) {
       let transacao;
       let store;
       let indice;
       try {
-        transacao = connection.transaction(["AlunoST"], "readonly");
-        store = transacao.objectStore("AlunoST");
+        transacao = connection.transaction(["ClienteST"], "readonly");  //Alterado 'AlunoST' para 'ClienteST'.
+        store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'.
         indice = store.index('idxMatricula');
       } 
       catch (e) {
@@ -101,19 +101,19 @@ export default class DaoCliente {
       let consulta = indice.get(matr);
       consulta.onsuccess = function(event) { 
         if(consulta.result != null)
-          resolve(Aluno.assign(consulta.result)); 
+          resolve(Cliente.assign(consulta.result));   //Alterado 'Aluno' para 'Cliente'.
         else
           resolve(null);
       };
       consulta.onerror = function(event) { reject(null); };
     });
-    let aluno = await promessa;
-    return aluno;
+    let cliente = await promessa;  //Alterado 'aluno' para 'cliente'
+    return cliente;    //Alterado 'aluno' para 'cliente'
   }
 
   //-----------------------------------------------------------------------------------------//
 
-  async obterAlunosPeloAutoIncrement() {
+  async obterClientesPeloAutoIncrement() {  //Alterado 'obterAlunoPeloAutoIncrement' para 'obterClientePeloAutoIncrement'
     let connection = await this.obterConexao();      
     let promessa = new Promise(function(resolve, reject) {
       let transacao;
