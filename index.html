@@ -18,13 +18,28 @@
       </nav>
     </header>
     <main>
-      Cadastramento de Clientes
+      <section>
+      <h1>
+       Cadastramento de Clientes 
+      </h1>
       <div><label>Nome</label><input type="text" id="tfNome" disabled="true" placeholder="Seu nome completo"/></div> 
       <div><label>CPF</label><input type="text" id="tfCpf" disabled="true" placeholder="000.000.000-00"/></div> 
       <div><label>E-Mail</label><input type="text" id="tfEmail" disabled="true" placeholder="exemplo@exemplo.com"/></div> 
       <div><label>Telefone</label><input type="text" id="tfTelefone" disabled="true" placeholder="(00) 00000-0000"/></div> 
       <div><label>Matrícula</label><input type="text" id="tfMatricula" disabled="true" placeholder="000000"/></div>
         <nav>
+          <div id="divComandos">
+            <button id="btIncluir">
+              Incluir
+            </button>
+            <button id="btAlterar">
+              Alterar
+            </button>
+            <button id="btExcluir">
+              Excluir
+            </button>
+          
+          </div>
           <div id="divNavegar">
             <button id="btPrimeiro">
               Primeiro
@@ -40,18 +55,9 @@
             </button>
           </div>
           <div id="divComandos">
-            <button id="btIncluir">
-              Incluir
-            </button>
-            <button id="btAlterar">
-              Alterar
-            </button>
-            <button id="btExcluir">
-              Excluir
-            </button>
             <button id="btSair">
-              Sair
-            </button>
+                Sair
+              </button>
           </div>
           <div id="divAviso">
           </div>
@@ -66,7 +72,7 @@
         </nav>
     </main>
     <footer>
-      Desenvolvimento Mobile (2022/1)  
+       
     </footer>
   </body>
     <script type="module" src="/CtrlSessao.js"></script>
