@@ -20,8 +20,8 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   //-----------------------------------------------------------------------------------------//
 
   constructor() {
-    this.#dao = new DaoCliente();  //Alterado 'DaoAluno' para 'DaoCliente'
-    this.#viewer = new ViewerAluno(this);
+    this.#dao = new DaoCliente();  //Alterado 'DaoAluno()' para 'DaoCliente()'
+    this.#viewer = new ViewerCliente(this);  //Alterado 'ViewerAluno(this)' para 'ViewerCliente(this)'
     this.#posAtual = 1;
     this.#atualizarContextoNavegacao();    
   }
@@ -36,10 +36,10 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
     this.#viewer.statusApresentacao();
     
     // Solicita ao DAO que dê a lista de todos os alunos presentes na base
-    let conjAlunos = await this.#dao.obterAlunos();
+    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()'
     
     // Se a lista de alunos estiver vazia
-    if(conjAlunos.length == 0) {
+    if(conjClientes.length == 0) {  //Alterado 'conjAlunos' para 'conjClientes'
       // Posição Atual igual a zero indica que não há objetos na base
       this.#posAtual = 0;
       
@@ -48,18 +48,18 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
     }
     else {
       // Se é necessário ajustar a posição atual, determino que ela passa a ser 1
-      if(this.#posAtual == 0 || this.#posAtual > conjAlunos.length)
+      if(this.#posAtual == 0 || this.#posAtual > conjClientes.length)  //Alterado 'conjAlunos' para 'conjClientes'
         this.#posAtual = 1;
       // Peço ao viewer que apresente o objeto da posição atual
-      this.#viewer.apresentar(this.#posAtual, conjAlunos.length, conjAlunos[this.#posAtual - 1]);
+      this.#viewer.apresentar(this.#posAtual, conjClientes.length, conjClientes[this.#posAtual - 1]);  //Alterado 'conjAlunos' para 'conjClientes'
     }
   }
   
   //-----------------------------------------------------------------------------------------//
 
   async apresentarPrimeiro() {
-    let conjAlunos = await this.#dao.obterAlunos();
-    if(conjAlunos.length > 0)
+    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
+    if(conjClientes.length > 0)  //Alterado 'conjAlunos' para 'conjClientes'
       this.#posAtual = 1;
     this.#atualizarContextoNavegacao();
   }
@@ -67,7 +67,7 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
   //-----------------------------------------------------------------------------------------//
 
   async apresentarProximo() {
-    let conjAlunos = await this.#dao.obterAlunos();
+    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
     if(this.#posAtual < conjAlunos.length)
       this.#posAtual++;
     this.#atualizarContextoNavegacao();
