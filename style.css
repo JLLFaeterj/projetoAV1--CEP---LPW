@@ -111,6 +111,7 @@ div {
 body {
   font-size: 100%;
   background: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
+  
 }
 
 .cabecalho {
@@ -156,4 +157,26 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+    font-weight: 600;
+  font-size: 48px;
+  line-height: 80px;
+  /* identical to box height */
+  color: #004A69;
+}
+
+.conteudo-principal-dados {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 50px;
+  /* identical to box height */
+
+  text-align: center;
+  color: #004A69;
 }
