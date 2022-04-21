@@ -1,16 +1,16 @@
 import ModelError from "/ModelError.js";
 
-export default class Cliente {
+export default class Cliente {  //ALTERADO NOME DA CLASSE
     
   //
   // DECLARAÇÃO DE ATRIBUTOS PRIVADOS: Em JavaScript, se o nome do atributo tem # no início, isso 
   // indica que ele é privado. Também deve-se colocar a presença dele destacada, como está abaixo.
   //
-  #matricula;
-  #cpf;
   #nome;
-  #email;
+  #cpf;
+  #email;  //ALTERADA ORDEM DA DEVLARAÇÃO DE VARIÁVEIS
   #telefone;
+  #matricula;
 
   //-----------------------------------------------------------------------------------------//
 
@@ -31,7 +31,7 @@ export default class Cliente {
   //-----------------------------------------------------------------------------------------//
 
   setMatricula(matr) {
-    if(!Aluno.validarMatricula(matr))
+    if(!Cliente.validarMatricula(matr))  //Alterado de 'Aluno' para 'Cliente'
       throw new ModelError("Matrícula Inválida: " + matr);
     this.#matricula = matr;
   }
@@ -45,7 +45,7 @@ export default class Cliente {
   //-----------------------------------------------------------------------------------------//
 
   setCpf(cpf) {
-    if(!Aluno.validarCpf(cpf))
+    if(!Cliente.validarCpf(cpf))   //Alterado de 'Aluno' para 'Cliente'
       throw new ModelError("CPF Inválido: " + cpf);
     this.#cpf = cpf;
   }
@@ -59,7 +59,7 @@ export default class Cliente {
   //-----------------------------------------------------------------------------------------//
 
   setNome(nome) {
-    if(!Aluno.validarNome(nome))
+    if(!Cliente.validarNome(nome))   //Alterado de 'Aluno' para 'Cliente'
       throw new ModelError("Nome Inválido: " + nome);
     this.#nome = nome;
   }
@@ -73,7 +73,7 @@ export default class Cliente {
   //-----------------------------------------------------------------------------------------//
 
   setEmail(email) {
-    if(!Aluno.validarEmail(email))
+    if(!Cliente.validarEmail(email))  //Alterado de 'Aluno' para 'Cliente'
       throw new ModelError("Email inválido: " + email);
     this.#email = email;
   }
@@ -87,7 +87,7 @@ export default class Cliente {
   //-----------------------------------------------------------------------------------------//
 
   setTelefone(telefone) {
-    if(!Aluno.validarTelefone(telefone))
+    if(!Cliente.validarTelefone(telefone))   //Alterado de 'Aluno' para 'Cliente'
       throw new ModelError("Telefone inválido: " + telefone);
     this.#telefone = telefone;
   }
@@ -96,18 +96,18 @@ export default class Cliente {
 
   toJSON() {
     return '{' +
-               '"matricula" : "'+ this.#matricula + '",' +
-               '"cpf" :  "'     + this.#cpf       + '",' +
                '"nome" : "'     + this.#nome      + '",' +
+               '"cpf" :  "'     + this.#cpf       + '",' +  //Alterado ordem dos dados.
                '"email" : "'    + this.#email     + '",' +
                '"telefone" : "' + this.#telefone  + '" ' + 
+               '"matricula" : "'+ this.#matricula + '",' +
            '}';  
   }
   
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Aluno(obj.matricula, obj.cpf, obj.nome, obj.email, obj.telefone);
+    return new Cliente(obj.matricula, obj.cpf, obj.nome, obj.email, obj.telefone);  //Alterando nome do objeto de 'Aluno' para 'Cliente'
   }
 
   //-----------------------------------------------------------------------------------------//
