@@ -96,11 +96,11 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
 
   toJSON() {
     return '{' +
+               '"matricula" : "'+ this.#matricula + '",' +
+               '"cpf" :  "'     + this.#cpf       + '",' +
                '"nome" : "'     + this.#nome      + '",' +
-               '"cpf" :  "'     + this.#cpf       + '",' +  //Alterado ordem dos dados.
                '"email" : "'    + this.#email     + '",' +
                '"telefone" : "' + this.#telefone  + '" ' + 
-               '"matricula" : "'+ this.#matricula + '",' +
            '}';  
   }
   

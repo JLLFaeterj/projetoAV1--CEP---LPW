@@ -84,7 +84,7 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
       this.tfNome.value      = cliente.getNome();  //Alterado 'aluno' para 'cliente'
       this.tfEmail.value     = cliente.getEmail();  //Alterado 'aluno' para 'cliente'
       this.tfTelefone.value  = cliente.getTelefone();  //Alterado 'aluno' para 'cliente'
-      this.divAviso.innerHTML = "Posição: " + pos + " | Número de Alunos: " + qtde;
+      this.divAviso.innerHTML = "Posição: " + pos + " | Número de Clientes: " + qtde;  //Alterado 'Alunos' para 'Clientes'
     }
   }
 
