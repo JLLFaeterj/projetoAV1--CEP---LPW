@@ -1,10 +1,10 @@
 import Status from "/Status.js";
-import Aluno from "/Aluno.js";
+import Cliente from "/Cliente.js";  //Alterado 'Aluno' para 'Cliente'.
 import ViewerError from "/ViewerError.js";
 
 //------------------------------------------------------------------------//
 
-export default class ViewerAluno {
+export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerCliente'.
 
   #ctrl;
   
@@ -67,23 +67,23 @@ export default class ViewerAluno {
 
 //------------------------------------------------------------------------//
   
-  apresentar(pos, qtde, aluno) {    
+  apresentar(pos, qtde, cliente) {   //Alterado 'aluno' para 'cliente'   
     
     this.configurarNavegacao( pos <= 1 , pos == qtde );   
 
-    if(aluno == null) {
+    if(cliente == null) {  //Alterado 'aluno' para 'cliente'
       this.tfMatricula.value = "";
       this.tfCpf.value       = "";
       this.tfNome.value      = "";
       this.tfEmail.value     = "";
       this.tfTelefone.value  = "";
-      this.divAviso.innerHTML = " Número de Alunos: 0";
+      this.divAviso.innerHTML = " Número de Clientes: 0";  //Alterado 'Alunos' para 'Clientes'
     } else {
-      this.tfMatricula.value = aluno.getMatricula();
-      this.tfCpf.value       = aluno.getCpf();
-      this.tfNome.value      = aluno.getNome();
-      this.tfEmail.value     = aluno.getEmail();
-      this.tfTelefone.value  = aluno.getTelefone();
+      this.tfMatricula.value = cliente.getMatricula();  //Alterado 'aluno' para 'cliente'
+      this.tfCpf.value       = cliente.getCpf();  //Alterado 'aluno' para 'cliente'
+      this.tfNome.value      = cliente.getNome();  //Alterado 'aluno' para 'cliente'
+      this.tfEmail.value     = cliente.getEmail();  //Alterado 'aluno' para 'cliente'
+      this.tfTelefone.value  = cliente.getTelefone();  //Alterado 'aluno' para 'cliente'
       this.divAviso.innerHTML = "Posição: " + pos + " | Número de Alunos: " + qtde;
     }
   }
