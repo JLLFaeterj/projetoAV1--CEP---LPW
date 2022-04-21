@@ -101,3 +101,18 @@ div {
 
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Work+Sans:wght@600&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-size: 100%;
+  background: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
+}
+
+.cabecalho {
+  display: flex;
+}
