@@ -1,6 +1,6 @@
 import ModelError from "/ModelError.js";
 
-export default class Aluno {
+export default class Cliente {
     
   //
   // DECLARAÇÃO DE ATRIBUTOS PRIVADOS: Em JavaScript, se o nome do atributo tem # no início, isso 
