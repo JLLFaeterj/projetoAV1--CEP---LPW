@@ -152,6 +152,7 @@ body {
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
 }
 
+
 .conteudo-principal-titulo {
   display: flex;
   align-items: center;
@@ -200,6 +201,7 @@ body {
   padding: 32px;
 }
 
+
 #btIncluir {
   width: 158px;
   height: 68px;
@@ -213,6 +215,7 @@ body {
   line-height: 26px;
   color: #FFFFFF;
   margin-right: 72px;
+  border:none;
 }
 
 #btAlterar {
@@ -227,6 +230,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+  border: none;
 }
 
 #btExcluir {
@@ -242,6 +246,7 @@ body {
   line-height: 26px;
   color: #FFFFFF;
   margin-left: 72px;
+  border: none;
 }
 
 #btPrimeiro{
@@ -256,6 +261,9 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+  margin-right: 24px;
+  margin-left: 50px;
+  border: none;
 }
 
 #btAnterior{
@@ -270,6 +278,8 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+  margin-right: 24px;
+  border: none;
 }
 
 #btProximo{
@@ -284,6 +294,8 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+  margin-right: 24px;
+  border: none;
 }
 
 #btUltimo{
@@ -298,6 +310,8 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
+  margin-right: 50px;
+  border: none;
 }
 
 #btSair{
@@ -313,4 +327,6 @@ body {
   line-height: 26px;
   color: #FFFFFF;
   margin: 21px;
+  border: none;
+  text-align: center;
 }
