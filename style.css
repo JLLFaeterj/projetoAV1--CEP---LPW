@@ -183,17 +183,14 @@ body {
   
 }
 
-.caixa {
+#caixa {
   background: rgba(255, 255, 255, 0.8);
   border-radius: 13px;
   position: absolute;
   width: 930px;
   height: 835px;
   top: 11%;
-  display: flex;
-  justify-content: center;
-  
-  
+  margin-left: 26%;
 }
 
 .conteudo-principal-inclusao {
