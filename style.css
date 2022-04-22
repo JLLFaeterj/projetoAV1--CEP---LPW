@@ -207,7 +207,8 @@ body {
   flex-direction: row;   /*deletar tudo, apenas teste*/
   align-items: center;
   justify-content: space-around;
-  padding: 32px;
+  padding-top: 32px;
+  
 }
 
 #tfNome{
@@ -345,8 +346,8 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  /*margin-right: 24px;*/
   margin-left: 50px;
+  margin-right: 24px;
   border: none;
 }
 
