@@ -104,7 +104,7 @@ div {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;  /*analisar isso como motivo do bug do box branco. Ele anula outras configurações*/
   text-decoration: none;
 }
 
@@ -210,6 +210,11 @@ body {
   border-radius: 3px;
   border: none;
   margin-right: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
 }
 
 #tfCpf{
@@ -220,6 +225,11 @@ body {
   border-radius: 3px;
   border: none;
   margin-right: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
 }
 
 #tfEmail{
@@ -230,6 +240,11 @@ body {
   border-radius: 3px;
   border: none;
   margin-right: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
 }
 
 #tfTelefone{
@@ -240,6 +255,11 @@ body {
   border-radius: 3px;
   border: none;
   margin-right: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
 }
 
 #tfMatricula{
@@ -250,6 +270,11 @@ body {
   border-radius: 3px;
   border: none;
   margin-right: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
 }
 
 
@@ -384,4 +409,10 @@ body {
 
 #divAviso {
   text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #004A69;
 }
