@@ -190,7 +190,7 @@ body {
   position: absolute;
   width: 930px;
   height: 835px;
-  top: 11%;
+  margin-top: 1%;
   margin-left: 26%;
 }
 
@@ -426,13 +426,9 @@ body {
   color: #004A69;
 }
 
-/*#divDialogo {
-  display: flex;
-  flex-direction: row;   /*deletar tudo, apenas teste
-  align-items: center;
-  justify-content: center;
-  padding-top: 32px;
-}*/
+#divDialogo {
+  
+}
 
 #btOk {
   width: 186px;
@@ -446,9 +442,10 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  margin: 21px;
+  /*margin: 10px;*/
   border: none;
-  
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #btCancelar {
@@ -463,7 +460,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  margin: 21px;
+  /*margin: 10px;*/
   border: none;
   
 }
