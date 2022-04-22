@@ -202,6 +202,14 @@ body {
   padding: 32px;
 }
 
+.conteudo-principal-navegacao {
+  display: flex;
+  flex-direction: row;   /*deletar tudo, apenas teste*/
+  align-items: center;
+  justify-content: space-around;
+  padding: 32px;
+}
+
 #tfNome{
   width: 572px;
   height: 41px;
@@ -337,7 +345,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  margin-right: 24px;
+  /*margin-right: 24px;*/
   margin-left: 50px;
   border: none;
 }
