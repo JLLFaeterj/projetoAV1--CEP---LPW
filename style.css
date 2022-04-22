@@ -188,8 +188,10 @@ body {
   border-radius: 13px;
   position: absolute;
   width: 930px;
-  height: 826px;
+  height: 835px;
   top: 11%;
+  display: flex;
+  justify-content: center;
   
   
 }
@@ -346,7 +348,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  margin-left: 50px;
+  margin-left: 45px;
   margin-right: 24px;
   border: none;
 }
