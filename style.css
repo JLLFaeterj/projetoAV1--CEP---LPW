@@ -187,6 +187,11 @@ body {
   position: absolute;
   width: 930px;
   height: 826px;
+  top: 11%;
+   left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  
 }
 
 .conteudo-principal-inclusao {
