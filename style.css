@@ -176,6 +176,7 @@ body {
   font-weight: 600;
   font-size: 30px;
   line-height: 50px;
+  margin-left: 10px;
   /* identical to box height */
 
   text-align: center;
@@ -423,4 +424,46 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #004A69;
+}
+
+/*#divDialogo {
+  display: flex;
+  flex-direction: row;   /*deletar tudo, apenas teste
+  align-items: center;
+  justify-content: center;
+  padding-top: 32px;
+}*/
+
+#btOk {
+  width: 186px;
+  height: 51px;
+  background: #000D3D;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #FFFFFF;
+  margin: 21px;
+  border: none;
+  
+}
+
+#btCancelar {
+  width: 186px;
+  height: 51px;
+  background: #000D3D;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-family: 'Work Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #FFFFFF;
+  margin: 21px;
+  border: none;
+  
 }
