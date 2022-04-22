@@ -381,3 +381,7 @@ body {
   border: none;
   margin-left: 40%;
 }
+
+#divAviso {
+  text-align: center;
+}
