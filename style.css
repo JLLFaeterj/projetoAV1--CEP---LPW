@@ -217,10 +217,15 @@ body {
 }
 
 #caixa-retorno {
-  position: relative;
+  position: absolute;
   background-color: white;
   top: 11%;
-  left: 50%;
+  left: 26%;
+    /*transform: translate (-50%,-50%);*/
+  width: 930px;
+  height: 835px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 13px;
 }
 
 .conteudo-principal-inclusao {
