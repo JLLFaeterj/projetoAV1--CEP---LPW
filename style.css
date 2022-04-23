@@ -110,7 +110,7 @@ div {
 
 body {
   font-size: 100%;
-  background: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
+  background-color: black;
 }
 
 .cabecalho {
@@ -214,6 +214,13 @@ body {
   margin-top: 1%;
   margin-left: 26%;
   
+}
+
+#caixa-retorno {
+  position: relative;
+  background-color: white;
+  top: 11%;
+  left: 50%;
 }
 
 .conteudo-principal-inclusao {
