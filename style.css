@@ -211,22 +211,10 @@ body {
   position: absolute;
   width: 930px;
   height: 835px;
-  margin-top: 1%;
-  margin-left: 26%;
-  
-}
-
-#caixa-retorno {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 13px;
-  width: 930px;
-  height: 835px;
   margin-top: 440px;
   left: 50%;
-  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO*/
+  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
   transform: translate(-50%, -50%) 
-  
 }
 
 .conteudo-principal-inclusao {
