@@ -110,7 +110,7 @@ div {
 
 body {
   font-size: 100%;
-  background-color: black;
+  background: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
 }
 
 .cabecalho {
@@ -218,14 +218,15 @@ body {
 
 #caixa-retorno {
   position: absolute;
-  background-color: white;
-  top: 11%;
-  left: 26%;
-    /*transform: translate (-50%,-50%);*/
-  width: 930px;
-  height: 835px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 13px;
+  width: 930px;
+  height: 835px;
+  margin-top: 440px;
+  left: 50%;
+  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO*/
+  transform: translate(-50%, -50%) 
+  
 }
 
 .conteudo-principal-inclusao {
