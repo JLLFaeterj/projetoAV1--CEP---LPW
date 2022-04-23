@@ -211,6 +211,11 @@ body {
   
 }
 
+#btPrimeiro:hover, #btAnterior:hover, #btProximo:hover, #btUltimo:hover {
+  background: #204FF6;
+  
+}
+
 #tfNome{
   width: 572px;
   height: 41px;
