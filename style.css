@@ -522,13 +522,10 @@ footer {
     font-size: 55px;
     line-height: 65px;
     text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
     margin-top: 900px;
 }
 
-#footer-logo {
+.footer-logo {
   /*position: absolute;
   width: 1440px;
   height: 83px;
@@ -546,11 +543,11 @@ footer {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  
 }
 
-#footer-sombra {
-  
- position: relative;
- top: -150px;
-}
+
+
+
+
 
