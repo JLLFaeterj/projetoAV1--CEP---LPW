@@ -515,13 +515,13 @@ body {
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.footer-logo {
+#footer-logo {
   /*position: absolute;
   width: 1440px;
   height: 83px;
   bottom: 0;*/
 
-  /*font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 55px;
@@ -533,23 +533,30 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;*/
+  text-fill-color: transparent;
+  filter: blur(0.12em) opacity(0.75);
   
+
+}
+
+#footer-sombra {
+  /*position: absolute;
+  width: 1440px;
+  height: 83px;
+  bottom: 0;*/
+
   font-family: 'Work Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 55px;
   line-height: 65px;
   text-align: center;
-  margin-top: 900px;
-  color: white;
-  
-  /*background: linear-gradient(180deg, #FFFFFF 0%, rgba(158, 179, 188, 0.94) 77.6%);
+
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(158, 179, 188, 0.94) 77.6%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;*/
+  background-clip: text;
+  text-fill-color: transparent;
   
 
-   
-  text-shadow: 2.5px 2.5px 0px rgba(0, 0, 0, 0.50);
 }
