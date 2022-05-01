@@ -538,8 +538,10 @@ footer {
   height: 373px;
   margin-top: 250px;
   left: 50%;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
   margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
   transform: translate(-50%, -50%)
+  
 }
 
 .zoom img {
@@ -549,18 +551,18 @@ footer {
 	transition: all 0.3s;
 }
 
+
 .zoom:hover img {
 	-moz-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
 
-a.text-item { 
-   color: currentColor;
-} 
+#cor-link {
+  color: inherit;
+}
 
 .text-item {
-  text-decoration: none;
 	position: absolute;
   font-family: 'Mukta', sans-serif;
 	left: 5%;
@@ -572,7 +574,7 @@ a.text-item {
 	color: #ffffff;
 	text-align: center;
 	font-weight: 700;
-	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.25);
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.50);
 }
 
 
