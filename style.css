@@ -122,17 +122,9 @@ body {
 }
 
 .cabecalho-logo {
-  font-family: 'Work Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 46px;
-  line-height: 42px;
+  /*line-height: 42px;*/
 
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(158, 179, 188, 0.94) 77.6%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  
 }
 
 .cabecalho-menu {
