@@ -514,7 +514,15 @@ footer {
 }
 
 .hotel_img {
+  display: flex;
   text-align: center;
+  position: absolute;
+  width: 559px;
+  height: 373px;
+  left: 50%;
+  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
+  transform: translate(-50%, -50%) 
+  margin-top: 440px;
 }
 
 
