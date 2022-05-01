@@ -516,35 +516,11 @@ body {
 }
 
 footer {
-    font-family: 'Work Sans', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 55px;
-    line-height: 65px;
-    text-align: center;
-    margin-top: 900px;
-}
-
-.footer-logo {
-  /*position: absolute;
-  width: 1440px;
-  height: 83px;
-  bottom: 0;*/
-
-  /*font-family: 'Work Sans', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 55px;
-  line-height: 65px;
   text-align: center;
-  margin-top: 900px;*/
-
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(158, 179, 188, 0.94) 77.6%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  
+  margin-top: 900px;
 }
+
+
 
 
 
