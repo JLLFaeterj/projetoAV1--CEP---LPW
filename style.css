@@ -519,10 +519,19 @@ footer {
   position: absolute;
   width: 559px;
   height: 373px;
+  /*border: 1px solid #004A69;*/
+  box-sizing: border-box;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 250px;
   left: 50%;
   margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
   transform: translate(-50%, -50%) 
-  margin-top: 440px;
+}
+
+.hotel_img:hover {
+  -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 
