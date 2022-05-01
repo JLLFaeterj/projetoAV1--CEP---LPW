@@ -513,35 +513,57 @@ footer {
   margin-top: 900px;
 }
 
-.hotel_img {
+/* cógido correto da imagem sem zoom */
+/*.hotel_img {
   display: flex;
   text-align: center;
   position: absolute;
   width: 559px;
   height: 373px;
   /*border: 1px solid #004A69;*/
-  box-sizing: border-box;
+  /*box-sizing: border-box;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   margin-top: 250px;
   left: 50%;
   margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
-  transform: translate(-50%, -50%) 
+  /*transform: translate(-50%, -50%) 
+}*/
+
+.zoom {
+	overflow: hidden;
+  display: flex;
+  text-align: center;
+  position: absolute;
+  width: 559px;
+  height: 373px;
+  margin-top: 250px;
+  left: 50%;
+  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
+  transform: translate(-50%, -50%)
 }
 
-.hotel_img:hover {
-  -moz-transform: scale(1.1);
+.zoom img {
+	max-width: 100%;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.zoom:hover img {
+	-moz-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
 
-.texto-img {
+.text-item {
 	position: absolute;
+  font-family: 'Mukta', sans-serif;
 	left: 5%;
 	right: 5%;
 	bottom: 20px;
 	z-index: 10;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 0px;
 	color: #ffffff;
 	text-align: center;
 	font-weight: 700;
