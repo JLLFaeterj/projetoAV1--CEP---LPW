@@ -227,6 +227,8 @@ body {
   
 }
 
+
+/* CÓDIGO PARA EDITAR OS DADOS DE DENTRO DOS COMPOS DE TEXTO */
 #tfNome, #tfCpf, #tfEmail, #tfTelefone, #tfMatricula{
   width: 572px;
   height: 41px;
@@ -243,6 +245,8 @@ body {
   padding: 5px;
 }
 
+
+/* CÓDIGO PARA EDITAR OS BOÕES DA TELA DE CADASTRO */
 #btIncluir {
   width: 158px;
   height: 68px;
@@ -371,6 +375,7 @@ body {
   border: none;
   margin-left: 40%;
 }
+
 
 
 /* CÓDIGO PARA EDITAR OS DADOS DE EXIBIÇÃO CADASTRADOS */
