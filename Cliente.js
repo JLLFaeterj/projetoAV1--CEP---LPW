@@ -7,16 +7,16 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   // indica que ele é privado. Também deve-se colocar a presença dele destacada, como está abaixo.
   //
   #nome;
-  #cpf;
+  #cnpj;
   #email;  //ALTERADA ORDEM DA DEVLARAÇÃO DE VARIÁVEIS
   #telefone;
   #matricula;
 
   //-----------------------------------------------------------------------------------------//
 
-  constructor(matr, cpf, nome, email, telefone) {
+  constructor(matr, cnpj, nome, email, telefone) {
     this.setMatricula(matr);
-    this.setCpf(cpf);
+    this.setCnpj(cnpj);
     this.setNome(nome);
     this.setEmail(email);
     this.setTelefone(telefone);      
@@ -38,16 +38,16 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   
   //-----------------------------------------------------------------------------------------//
 
-  getCpf() {
-    return this.#cpf;
+  getCnpj() {
+    return this.#cnpj;
   }
   
   //-----------------------------------------------------------------------------------------//
 
-  setCpf(cpf) {
-    if(!Cliente.validarCpf(cpf))   //Alterado de 'Aluno' para 'Cliente'
-      throw new ModelError("CPF Inválido: " + cpf);
-    this.#cpf = cpf;
+  setCnpj(cnpj) {
+    if(!Cliente.validarCnpj(cnpj))   //Alterado de 'Aluno' para 'Cliente'
+      throw new ModelError("CPF Inválido: " + cnpj);
+    this.#cnpj = cnpj;
   }
   
   //-----------------------------------------------------------------------------------------//
@@ -97,7 +97,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   toJSON() {
     return '{' +
                '"matricula" : "'+ this.#matricula + '",' +
-               '"cpf" :  "'     + this.#cpf       + '",' +
+               '"cnpj" :  "'     + this.#cnpj       + '",' +
                '"nome" : "'     + this.#nome      + '",' +
                '"email" : "'    + this.#email     + '",' +
                '"telefone" : "' + this.#telefone  + '" ' + 
@@ -107,7 +107,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Cliente(obj.matricula, obj.cpf, obj.nome, obj.email, obj.telefone);  //Alterando nome do objeto de 'Aluno' para 'Cliente'
+    return new Cliente(obj.matricula, obj.cnpj, obj.nome, obj.email, obj.telefone);  //Alterando nome do objeto de 'Aluno' para 'Cliente'
   }
 
   //-----------------------------------------------------------------------------------------//
@@ -129,7 +129,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
 
   //-----------------------------------------------------------------------------------------//
 
-  static validarCpf(strCpf) {
+  static validarCnpj(cnpj) {
      
     cnpj = cnpj.replace(/[^\d]+/g,'');
  

@@ -29,7 +29,7 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
     this.btCancelar  = this.obterElemento('btCancelar');
 
     this.tfMatricula = this.obterElemento('tfMatricula');
-    this.tfCpf       = this.obterElemento('tfCpf');
+    this.tfCnpj       = this.obterElemento('tfCnpj');
     this.tfNome      = this.obterElemento('tfNome');
     this.tfEmail     = this.obterElemento('tfEmail');
     this.tfTelefone  = this.obterElemento('tfTelefone');
@@ -73,14 +73,14 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
 
     if(cliente == null) {  //Alterado 'aluno' para 'cliente'
       this.tfMatricula.value = "";
-      this.tfCpf.value       = "";
+      this.tfCnpj.value       = "";
       this.tfNome.value      = "";
       this.tfEmail.value     = "";
       this.tfTelefone.value  = "";
       this.divAviso.innerHTML = " Número de Clientes: 0";  //Alterado 'Alunos' para 'Clientes'
     } else {
       this.tfMatricula.value = cliente.getMatricula();  //Alterado 'aluno' para 'cliente'
-      this.tfCpf.value       = cliente.getCpf();  //Alterado 'aluno' para 'cliente'
+      this.tfCnpj.value       = cliente.getCnpj();  //Alterado 'aluno' para 'cliente'
       this.tfNome.value      = cliente.getNome();  //Alterado 'aluno' para 'cliente'
       this.tfEmail.value     = cliente.getEmail();  //Alterado 'aluno' para 'cliente'
       this.tfTelefone.value  = cliente.getTelefone();  //Alterado 'aluno' para 'cliente'
@@ -105,7 +105,7 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
     this.divDialogo.hidden = false; 
     
     if(operacao != Status.EXCLUINDO) {
-      this.tfCpf.disabled = false;
+      this.tfCnpj.disabled = false;
       this.tfNome.disabled = false;
       this.tfEmail.disabled = false;
       this.tfTelefone.disabled = false;
@@ -116,7 +116,7 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
     if(operacao == Status.INCLUINDO) {
       this.tfMatricula.disabled = false;
       this.tfMatricula.value = "";
-      this.tfCpf.value = "";
+      this.tfCnpj.value = "";
       this.tfNome.value = "";
       this.tfEmail.value = "";
       this.tfTelefone.value = "";
@@ -126,12 +126,12 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
 //------------------------------------------------------------------------//
   
   statusApresentacao() { 
-    this.tfCpf.disabled = true;
+    this.tfCnpj.disabled = true;
     this.divNavegar.hidden = false;
     this.divComandos.hidden = false;
     this.divDialogo.hidden = true; 
     this.tfMatricula.disabled = true;
-    this.tfCpf.disabled = true;
+    this.tfCnpj.disabled = true;
     this.tfNome.disabled = true;
     this.tfEmail.disabled = true;
     this.tfTelefone.disabled = true;
@@ -205,14 +205,14 @@ function fnBtExcluir() {
 
 function fnBtOk() {
   const matricula = this.viewer.tfMatricula.value;
-  const cpf = this.viewer.tfCpf.value;
+  const cnpj = this.viewer.tfCnpj.value;
   const nome = this.viewer.tfNome.value;
   const email = this.viewer.tfEmail.value;
   const telefone = this.viewer.tfTelefone.value;
     
   // Como defini que o método "efetivar" é um dos métodos incluir, excluir ou alterar
   // não estou precisando colocar os ninhos de IF abaixo.
-  this.viewer.getCtrl().efetivar(matricula, cpf, nome, email, telefone); 
+  this.viewer.getCtrl().efetivar(matricula, cnpj, nome, email, telefone); 
 
   // if(this.viewer.getCtrl().getStatus() == Status.INCLUINDO) {
   //  this.viewer.getCtrl().fnEfetivar(matricula, cpf, nome, email, telefone); 

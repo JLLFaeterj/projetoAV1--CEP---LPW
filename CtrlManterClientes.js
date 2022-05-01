@@ -125,10 +125,10 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
 
   //-----------------------------------------------------------------------------------------//
  
-  async incluir(matr, cpf, nome, email, telefone) {
+  async incluir(matr, cnpj, nome, email, telefone) {
     if(this.#status == Status.INCLUINDO) {
       try {
-        let cliente = new Cliente(matr, cpf, nome, email, telefone);  //Alterado 'aluno' para 'cliente'. Maiúsculas e minúsculas (classe e variável)
+        let cliente = new Cliente(matr, cnpj, nome, email, telefone);  //Alterado 'aluno' para 'cliente'. Maiúsculas e minúsculas (classe e variável)
         await this.#dao.incluir(cliente);  //Alterado 'aluno' para 'cliente'
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
@@ -141,14 +141,14 @@ export default class CtrlManterClientes {  //Alterando o nome da classe para 'Ct
 
   //-----------------------------------------------------------------------------------------//
  
-  async alterar(matr, cpf, nome, email, telefone) {
+  async alterar(matr, cnpj, nome, email, telefone) {
     if(this.#status == Status.ALTERANDO) {
       try {
         let cliente = await this.#dao.obterClientePelaMatricula(matr);   //Alterado 'aluno' para 'cliente' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
         if(cliente == null) {  //Alterado 'aluno' para 'cliente'
           alert("Cliente com a matrícula " + matr + " não encontrado.");  //Alterado 'Aluno' para 'Cliente'
         } else {
-          cliente.setCpf(cpf);  //Alterado 'aluno' para 'cliente'
+          cliente.setCnpj(cnpj);  //Alterado 'aluno' para 'cliente'
           cliente.setNome(nome);  //Alterado 'aluno' para 'cliente'
           cliente.setEmail(email);  //Alterado 'aluno' para 'cliente'
           cliente.setTelefone(telefone);  //Alterado 'aluno' para 'cliente'
