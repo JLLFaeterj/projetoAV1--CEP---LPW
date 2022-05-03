@@ -35,11 +35,11 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
     // Determina ao viewer que ele está apresentando dos dados 
     this.#viewer.statusApresentacao();
     
-    // Solicita ao DAO que dê a lista de todos os alunos presentes na base
-    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()'
+    // Solicita ao DAO que dê a lista de todos os hotéis presentes na base
+    let conjHoteis = await this.#dao.obterHoteis();  //Alterado 'conjAlunos' para 'conjHoteis' e Alterado '#dao.obterAlunos()' para '#dao.obterHoteis()'
     
-    // Se a lista de alunos estiver vazia
-    if(conjClientes.length == 0) {  //Alterado 'conjAlunos' para 'conjClientes'
+    // Se a lista de hotéis estiver vazia
+    if(conjHoteis.length == 0) {  //Alterado 'conjAlunos' para 'conjHoteis'
       // Posição Atual igual a zero indica que não há objetos na base
       this.#posAtual = 0;
       
@@ -48,18 +48,18 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
     }
     else {
       // Se é necessário ajustar a posição atual, determino que ela passa a ser 1
-      if(this.#posAtual == 0 || this.#posAtual > conjClientes.length)  //Alterado 'conjAlunos' para 'conjClientes'
+      if(this.#posAtual == 0 || this.#posAtual > conjHoteis.length)  //Alterado 'conjAlunos' para 'conjHoteis'
         this.#posAtual = 1;
       // Peço ao viewer que apresente o objeto da posição atual
-      this.#viewer.apresentar(this.#posAtual, conjClientes.length, conjClientes[this.#posAtual - 1]);  //Alterado 'conjAlunos' para 'conjClientes'
+      this.#viewer.apresentar(this.#posAtual, conjHoteis.length, conjHoteis[this.#posAtual - 1]);  //Alterado 'conjAlunos' para 'conjHoteis'
     }
   }
   
   //-----------------------------------------------------------------------------------------//
 
   async apresentarPrimeiro() {
-    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-    if(conjClientes.length > 0)  //Alterado 'conjAlunos' para 'conjClientes'
+    let conjHoteis = await this.#dao.obterHoteis();  //Alterado 'conjAlunos' para 'conjHoteis' e Alterado '#dao.obterAlunos()' para '#dao.obterHoteis()''
+    if(conjHoteis.length > 0)  //Alterado 'conjAlunos' para 'conjHoteis'
       this.#posAtual = 1;
     this.#atualizarContextoNavegacao();
   }
@@ -67,8 +67,8 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
   //-----------------------------------------------------------------------------------------//
 
   async apresentarProximo() {
-    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-    if(this.#posAtual < conjClientes.length)  //Alterado 'conjAlunos' para 'conjClientes'
+    let conjHoteis = await this.#dao.obterHoteis();  //Alterado 'conjAlunos' para 'conjHoteis' e Alterado '#dao.obterAlunos()' para '#dao.obterHoteis()''
+    if(this.#posAtual < conjHoteis.length)  //Alterado 'conjAlunos' para 'conjHoteis'
       this.#posAtual++;
     this.#atualizarContextoNavegacao();
   }
@@ -76,7 +76,7 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
   //-----------------------------------------------------------------------------------------//
 
   async apresentarAnterior() {
-    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
+    let conjHoteis = await this.#dao.obterHoteis();  //Alterado 'conjAlunos' para 'conjHoteis' e Alterado '#dao.obterAlunos()' para '#dao.obterHoteis()''
     if(this.#posAtual > 1)
       this.#posAtual--;
     this.#atualizarContextoNavegacao();
@@ -85,8 +85,8 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
   //-----------------------------------------------------------------------------------------//
 
   async apresentarUltimo() {
-    let conjClientes = await this.#dao.obterClientes();  //Alterado 'conjAlunos' para 'conjClientes' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-    this.#posAtual = conjClientes.length;  //Alterado 'conjAlunos' para 'conjClientes'
+    let conjHoteis = await this.#dao.obterHoteis();  //Alterado 'conjAlunos' para 'conjHoteis' e Alterado '#dao.obterAlunos()' para '#dao.obterHoteis()''
+    this.#posAtual = conjHoteis.length;  //Alterado 'conjAlunos' para 'conjHoteis'
     this.#atualizarContextoNavegacao();
   }
 
@@ -128,8 +128,8 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
   async incluir(matr, cnpj, nome, email, telefone) {
     if(this.#status == Status.INCLUINDO) {
       try {
-        let cliente = new Cliente(matr, cnpj, nome, email, telefone);  //Alterado 'aluno' para 'cliente'. Maiúsculas e minúsculas (classe e variável)
-        await this.#dao.incluir(cliente);  //Alterado 'aluno' para 'cliente'
+        let hotel = new Hotel(matr, cnpj, nome, email, telefone);  //Alterado 'aluno' para 'hotel'. Maiúsculas e minúsculas (classe e variável)
+        await this.#dao.incluir(hotel);  //Alterado 'aluno' para 'hotel'
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
       }
@@ -144,15 +144,15 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
   async alterar(matr, cnpj, nome, email, telefone) {
     if(this.#status == Status.ALTERANDO) {
       try {
-        let cliente = await this.#dao.obterClientePelaMatricula(matr);   //Alterado 'aluno' para 'cliente' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-        if(cliente == null) {  //Alterado 'aluno' para 'cliente'
-          alert("Cliente com a matrícula " + matr + " não encontrado.");  //Alterado 'Aluno' para 'Cliente'
+        let hotel = await this.#dao.obterHotelPelaMatricula(matr);   //Alterado 'aluno' para 'hotel' e Alterado '#dao.obterAlunoPelaMatricula()' para '#dao.obterHotelPelaMatricula()''
+        if(hotel == null) {  //Alterado 'aluno' para 'hotel'
+          alert("Hotel com a matrícula " + matr + " não encontrado.");  //Alterado 'Aluno' para 'Hotel'
         } else {
-          cliente.setCnpj(cnpj);  //Alterado 'aluno' para 'cliente'
-          cliente.setNome(nome);  //Alterado 'aluno' para 'cliente'
-          cliente.setEmail(email);  //Alterado 'aluno' para 'cliente'
-          cliente.setTelefone(telefone);  //Alterado 'aluno' para 'cliente'
-          await this.#dao.alterar(cliente);   //Alterado 'aluno' para 'cliente'
+          hotel.setCnpj(cnpj);  //Alterado 'aluno' para 'hotel'
+          hotel.setNome(nome);  //Alterado 'aluno' para 'hotel'
+          hotel.setEmail(email);  //Alterado 'aluno' para 'hotel'
+          hotel.setTelefone(telefone);  //Alterado 'aluno' para 'hotel'
+          await this.#dao.alterar(hotel);   //Alterado 'aluno' para 'hotel'
         }
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
