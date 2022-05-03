@@ -203,8 +203,8 @@ body {
   border-radius: 13px;
   position: absolute;
   width: 930px;
-  height: 835px;
-  margin-top: 440px;
+  height: 900px;
+  margin-top: 490px;
   left: 50%;
   margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
   transform: translate(-50%, -50%) 
