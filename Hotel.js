@@ -21,7 +21,7 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
     this.setNome(nome);
     this.setEmail(email);
     this.setTelefone(telefone); 
-    this.setCep(cep);
+    this.setCep(cep);  ///ALTERADO CEP
   }
   
   //-----------------------------------------------------------------------------------------//
@@ -103,9 +103,9 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   setCep(cep) {
-    if(!Hotel.validarNome(cep))   //Alterado de 'Aluno' para 'Hotel'
+    if(!Hotel.validarCep(cep))   //Alterado de 'Aluno' para 'Hotel'
       throw new ModelError("Cep Inválido: " + cep);
-    this.#cep = cep;    ///LTERADO CEP
+    this.#cep = cep;    ///ALTERADO CEP
   }
   
   //-----------------------------------------------------------------------------------------//
@@ -113,11 +113,11 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
   toJSON() {
     return '{' +
                '"matricula" : "'+ this.#matricula + '",' +
-               '"cnpj" :  "'     + this.#cnpj       + '",' +
+               '"cnpj" :  "'    + this.#cnpj      + '",' +
                '"nome" : "'     + this.#nome      + '",' +
                '"email" : "'    + this.#email     + '",' +
-               '"telefone" : "' + this.#telefone  + '" ' +
-               '"cep" : "' + this.#cep  + '" ' +  //ALTERADO CEP
+               '"telefone" : "' + this.#telefone  + '",' +
+               '"cep" : "'      + this.#cep       + '" ' +  //ALTERADO CEP
            '}';  
   }
   
