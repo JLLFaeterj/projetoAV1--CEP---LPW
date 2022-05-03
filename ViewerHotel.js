@@ -81,10 +81,10 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
     } else {
       this.tfMatricula.value = hotel.getMatricula();  //Alterado 'aluno' para 'hotel'
       this.tfCnpj.value       = hotel.getCnpj();  //Alterado 'aluno' para 'hotel'
-      this.tfNome.value      = hotel.getNome();  //Alterado 'aluno' para 'cliente'
-      this.tfEmail.value     = cliente.getEmail();  //Alterado 'aluno' para 'cliente'
-      this.tfTelefone.value  = cliente.getTelefone();  //Alterado 'aluno' para 'cliente'
-      this.divAviso.innerHTML = "Posição: " + pos + " | Número de Clientes: " + qtde;  //Alterado 'Alunos' para 'Clientes'
+      this.tfNome.value      = hotel.getNome();  //Alterado 'aluno' para 'hotel'
+      this.tfEmail.value     = hotel.getEmail();  //Alterado 'aluno' para 'hotel'
+      this.tfTelefone.value  = hotel.getTelefone();  //Alterado 'aluno' para 'hotel'
+      this.divAviso.innerHTML = "Posição: " + pos + " | Número de Hotéis: " + qtde;  //Alterado 'Alunos' para 'Hotéis'
     }
   }
 
