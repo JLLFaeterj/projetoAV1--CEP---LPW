@@ -86,7 +86,7 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
       this.tfNome.value      = hotel.getNome();  //Alterado 'aluno' para 'hotel'
       this.tfEmail.value     = hotel.getEmail();  //Alterado 'aluno' para 'hotel'
       this.tfTelefone.value  = hotel.getTelefone();  //Alterado 'aluno' para 'hotel'
-      this.tfCep.value       = hotel.getCep()"";  //ALTERADO CEP
+      this.tfCep.value       = hotel.getCep();  //ALTERADO CEP
       this.divAviso.innerHTML = "Posição: " + pos + " | Número de Hotéis: " + qtde;  //Alterado 'Alunos' para 'Hotéis'
     }
   }
