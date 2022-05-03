@@ -1,4 +1,4 @@
-# Aspectos de configuração
+# Projeto Linguagens de Programação WEB
 
 1. Criar uma conta no GitHub
 
