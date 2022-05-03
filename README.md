@@ -1,6 +1,6 @@
 # Projeto Linguagens de Programação para WEB 2022
 
-## Faculdade de Educação Tecnológica do Estado do Rio de Janeiro (FAETREJ - Paracambi)
+## Faculdade de Educação Tecnológica do Estado do Rio de Janeiro (FAETERJ - Paracambi)
 **Disciplina:** Linguagens e Programação para WEB - LPW
 
 **Curso:** Sistemas de Informação 
