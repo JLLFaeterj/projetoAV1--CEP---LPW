@@ -1,10 +1,10 @@
 import Status from "/Status.js";
-import Cliente from "/Cliente.js";  //Alterado 'Aluno' para 'Cliente'.
+import Hotel from "/Hotel.js";  //Alterado 'Aluno' para 'Hotel'.
 import ViewerError from "/ViewerError.js";
 
 //------------------------------------------------------------------------//
 
-export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerCliente'.
+export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
 
   #ctrl;
   
@@ -67,21 +67,21 @@ export default class ViewerCliente {  //Alterado 'ViewerAluno' para 'ViewerClien
 
 //------------------------------------------------------------------------//
   
-  apresentar(pos, qtde, cliente) {   //Alterado 'aluno' para 'cliente'   
+  apresentar(pos, qtde, hotel) {   //Alterado 'aluno' para 'hotel'   
     
     this.configurarNavegacao( pos <= 1 , pos == qtde );   
 
-    if(cliente == null) {  //Alterado 'aluno' para 'cliente'
+    if(hotel == null) {  //Alterado 'aluno' para 'hotel'
       this.tfMatricula.value = "";
       this.tfCnpj.value       = "";
       this.tfNome.value      = "";
       this.tfEmail.value     = "";
       this.tfTelefone.value  = "";
-      this.divAviso.innerHTML = " Número de Clientes: 0";  //Alterado 'Alunos' para 'Clientes'
+      this.divAviso.innerHTML = " Número de Hotéis: 0";  //Alterado 'Alunos' para 'Hotéis'
     } else {
-      this.tfMatricula.value = cliente.getMatricula();  //Alterado 'aluno' para 'cliente'
-      this.tfCnpj.value       = cliente.getCnpj();  //Alterado 'aluno' para 'cliente'
-      this.tfNome.value      = cliente.getNome();  //Alterado 'aluno' para 'cliente'
+      this.tfMatricula.value = hotel.getMatricula();  //Alterado 'aluno' para 'hotel'
+      this.tfCnpj.value       = hotel.getCnpj();  //Alterado 'aluno' para 'hotel'
+      this.tfNome.value      = hotel.getNome();  //Alterado 'aluno' para 'cliente'
       this.tfEmail.value     = cliente.getEmail();  //Alterado 'aluno' para 'cliente'
       this.tfTelefone.value  = cliente.getTelefone();  //Alterado 'aluno' para 'cliente'
       this.divAviso.innerHTML = "Posição: " + pos + " | Número de Clientes: " + qtde;  //Alterado 'Alunos' para 'Clientes'

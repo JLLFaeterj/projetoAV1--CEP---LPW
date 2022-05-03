@@ -113,14 +113,14 @@ export default class DaoHotel {
 
   //-----------------------------------------------------------------------------------------//
 
-  async obterClientesPeloAutoIncrement() {  //Alterado 'obterAlunoPeloAutoIncrement' para 'obterClientePeloAutoIncrement'
+  async obterHoteisPeloAutoIncrement() {  //Alterado 'obterAlunoPeloAutoIncrement' para 'obterHoteisPeloAutoIncrement'
     let connection = await this.obterConexao();      
     let promessa = new Promise(function(resolve, reject) {
       let transacao;
       let store;
       try {
-        transacao = connection.transaction(["ClienteST"], "readonly"); //Alterado 'AlunoST' para 'ClienteST'.
-        store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'.
+        transacao = connection.transaction(["HotelST"], "readonly"); //Alterado 'AlunoST' para 'HotelST'.
+        store = transacao.objectStore("HotelST");  //Alterado 'AlunoST' para 'HotelST'.
       } 
       catch (e) {
         reject(new ModelError("Erro: " + e));
@@ -129,7 +129,7 @@ export default class DaoHotel {
       store.openCursor().onsuccess = function(event) {
         var cursor = event.target.result;
         if (cursor) {        
-          const novo = Cliente.assign(cursor.value);  //Alterado 'Aluno' para 'Cliente'.
+          const novo = Hotel.assign(cursor.value);  //Alterado 'Aluno' para 'Hotel'.
           array.push(novo);
           cursor.continue();
         } else {
@@ -137,21 +137,21 @@ export default class DaoHotel {
         }
       };
     });
-    this.arrayClientes = await promessa;  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'
-    return this.arrayClientes;  //Alterado nome do array de 'arrayAlunos' para 'arrayClientes'
+    this.arrayHoteis = await promessa;  //Alterado nome do array de 'arrayAlunos' para 'arrayHoteis'
+    return this.arrayHoteis;  //Alterado nome do array de 'arrayAlunos' para 'arrayHoteis'
   }
 
   //-----------------------------------------------------------------------------------------//
 
-  async incluir(cliente) {  //Alterado 'aluno' para 'cliente'
+  async incluir(hotel) {  //Alterado 'aluno' para 'hotel'
     let connection = await this.obterConexao();      
     let resultado = new Promise( (resolve, reject) => {
-      let transacao = connection.transaction(["ClienteST"], "readwrite");  //Alterado 'AlunoST' para 'ClienteST'.
+      let transacao = connection.transaction(["HotelST"], "readwrite");  //Alterado 'AlunoST' para 'HotelST'.
       transacao.onerror = event => {
-        reject(new ModelError("Não foi possível incluir o cliente", event.target.error));
+        reject(new ModelError("Não foi possível incluir o hotel", event.target.error));
       };
-      let store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'.
-      let requisicao = store.add(Cliente.deassign(cliente));  //Alterado 'aluno' para 'cliente'. Minúsculo e maiúsculo.
+      let store = transacao.objectStore("HotelST");  //Alterado 'AlunoST' para 'HotelST'.
+      let requisicao = store.add(Hotel.deassign(hotel));  //Alterado 'aluno' para 'hotel'. Minúsculo e maiúsculo.
       requisicao.onsuccess = function(event) {
           resolve(true);              
       };
@@ -161,29 +161,29 @@ export default class DaoHotel {
 
   //-----------------------------------------------------------------------------------------//
 
-  async alterar(cliente) { //Alterado 'aluno' para 'cliente'
+  async alterar(hotel) { //Alterado 'aluno' para 'hotel'
     let connection = await this.obterConexao();      
     let resultado = new Promise(function(resolve, reject) {
-      let transacao = connection.transaction(["ClienteST"], "readwrite");  //Alterado 'AlunoST' para 'ClienteST'
+      let transacao = connection.transaction(["HotelST"], "readwrite");  //Alterado 'AlunoST' para 'HotelST'
       transacao.onerror = event => {
-        reject(new ModelError("Não foi possível alterar o cliente", event.target.error)); //Alterado 'aluno' para 'cliente'
+        reject(new ModelError("Não foi possível alterar o hotel", event.target.error)); //Alterado 'aluno' para 'hotel'
       };
-      let store = transacao.objectStore("ClienteST");  //Alterado 'AlunoST' para 'ClienteST'   
+      let store = transacao.objectStore("HotelST");  //Alterado 'AlunoST' para 'HotelST'   
       let indice = store.index('idxMatricula');
-      var keyValue = IDBKeyRange.only(cliente.getMatricula());  //Alterado 'aluno' para 'cliente'
+      var keyValue = IDBKeyRange.only(hotel.getMatricula());  //Alterado 'aluno' para 'hotel'
       indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
-          if (cursor.value.matricula == cliente.getMatricula()) {  //Alterado 'aluno' para 'cliente'
-            const request = cursor.update(Cliente.deassign(cliente));  //Alterado 'aluno' para 'cliente'. Minúsculo e maiúsculo.
+          if (cursor.value.matricula == hotel.getMatricula()) {  //Alterado 'aluno' para 'hotel'
+            const request = cursor.update(Hotel.deassign(hotel));  //Alterado 'aluno' para 'hotel'. Minúsculo e maiúsculo.
             request.onsuccess = () => {
-              console.log("[DaoCliente.alterar] Cursor update - Sucesso ");  //Alterado 'DaoAluno' para 'DaoCliente'
+              console.log("[DaoHotel.alterar] Cursor update - Sucesso ");  //Alterado 'DaoAluno' para 'DaoHotel'
               resolve("Ok");
               return;
             };
           } 
         } else {
-          reject(new ModelError("Cliente com a matrícula " + cliente.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Cliente'. Minúsculo e maiúsculo.
+          reject(new ModelError("Hotel com a matrícula " + hotel.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Hotel'. Minúsculo e maiúsculo.
         }
       };
     });
@@ -192,20 +192,20 @@ export default class DaoHotel {
   
   //-----------------------------------------------------------------------------------------//
 
-  async excluir(cliente) {  //Alterado 'aluno' para 'cliente'
+  async excluir(hotel) {  //Alterado 'aluno' para 'hotel'
     let connection = await this.obterConexao();      
     let transacao = await new Promise(function(resolve, reject) {
-      let transacao = connection.transaction(["ClienteST"], "readwrite");  //Alterado 'AlunoST' para 'ClienteST'
+      let transacao = connection.transaction(["HotelST"], "readwrite");  //Alterado 'AlunoST' para 'HotelST'
       transacao.onerror = event => {
-        reject(new ModelError("Não foi possível excluir o cliente", event.target.error));  //Alterado 'aluno' para 'cliente'
+        reject(new ModelError("Não foi possível excluir o hotel", event.target.error));  //Alterado 'aluno' para 'hotel'
       };
-      let store = transacao.objectStore("ClienteST");   //Alterado 'AlunoST' para 'ClienteST'
+      let store = transacao.objectStore("HotelST");   //Alterado 'AlunoST' para 'HotelST'
       let indice = store.index('idxMatricula');
-      var keyValue = IDBKeyRange.only(cliente.getMatricula());  //Alterado 'aluno' para 'cliente'
+      var keyValue = IDBKeyRange.only(hotel.getMatricula());  //Alterado 'aluno' para 'hotel'
       indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
-          if (cursor.value.matricula == cliente.getMatricula()) {  //Alterado 'aluno' para 'cliente'
+          if (cursor.value.matricula == hotel.getMatricula()) {  //Alterado 'aluno' para 'hotel'
             const request = cursor.delete();
             request.onsuccess = () => { 
               resolve("Ok"); 
@@ -213,7 +213,7 @@ export default class DaoHotel {
             return;
           }
         } else {
-          reject(new ModelError("Cliente com a matrícula " + cliente.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Cliente'. Minúsculo e maiúsculo.
+          reject(new ModelError("Hotel com a matrícula " + hotel.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Hotel'. Minúsculo e maiúsculo.
         }
       };
     });
