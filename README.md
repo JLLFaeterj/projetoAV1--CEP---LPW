@@ -8,10 +8,17 @@
 **Professor:** Alessando de Almeida Castro Cerqueira
 
 **Alunos:** 
-  -Jonathas Lopes Lázari e Bruno Arruda
+  - Jonathas Lopes Lázari: _jonathas.lazari.182si@aluno.faeterj-prc.faetec.rj.gov.br_ **1820468300031**
+  - Bruno Arruda:
 
 
+Site de uma agência de turismo para o cadastro de hotéis. 
+Trabalho de AV1, feito com base no código do professor Alessandro Cerqueira.
 
+Código base utilizado: [Github Alessandro Cerqueira](https://github.com/alessandro-cerqueira/faeterjBase)
+Código base para a validação do CNPJ: [Github Alex Bruno Cáceres](https://gist.github.com/alexbruno/6623b5afa847f891de9cb6f704d86d02)
+Site para geração dos exemplos de CNPJ: [Gerador CNPJ](https://www.geradorcnpj.com/)
+Site para geração de exemplos de telefone
 
 2. Criar uma conta no Glitch.me
 
