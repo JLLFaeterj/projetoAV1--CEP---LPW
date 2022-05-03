@@ -11,15 +11,17 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
   #email;  //ALTERADA ORDEM DA DECLARAÇÃO DE VARIÁVEIS
   #telefone;
   #matricula;
+  #cep   ///ALTERADO CEP
 
   //-----------------------------------------------------------------------------------------//
 
-  constructor(matr, cnpj, nome, email, telefone) {
+  constructor(matr, cnpj, nome, email, telefone, cep) {  ///ALTERADO CEP
     this.setMatricula(matr);
     this.setCnpj(cnpj);
     this.setNome(nome);
     this.setEmail(email);
-    this.setTelefone(telefone);      
+    this.setTelefone(telefone); 
+    this.setCep(cep)
   }
   
   //-----------------------------------------------------------------------------------------//

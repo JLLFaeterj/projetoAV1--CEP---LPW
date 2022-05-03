@@ -125,10 +125,10 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
 
   //-----------------------------------------------------------------------------------------//
  
-  async incluir(matr, cnpj, nome, email, telefone) {
+  async incluir(matr, cnpj, nome, email, telefone, cep) { ///ALTERADO CEP
     if(this.#status == Status.INCLUINDO) {
       try {
-        let hotel = new Hotel(matr, cnpj, nome, email, telefone);  //Alterado 'aluno' para 'hotel'. Maiúsculas e minúsculas (classe e variável)
+        let hotel = new Hotel(matr, cnpj, nome, email, telefone, cep);  //Alterado 'aluno' para 'hotel'. Maiúsculas e minúsculas (classe e variável) ///ALTERADO CEP
         await this.#dao.incluir(hotel);  //Alterado 'aluno' para 'hotel'
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
@@ -141,7 +141,7 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
 
   //-----------------------------------------------------------------------------------------//
  
-  async alterar(matr, cnpj, nome, email, telefone) {
+  async alterar(matr, cnpj, nome, email, telefone, cep) { ///ALTERADO CEP
     if(this.#status == Status.ALTERANDO) {
       try {
         let hotel = await this.#dao.obterHotelPelaMatricula(matr);   //Alterado 'aluno' para 'hotel' e Alterado '#dao.obterAlunoPelaMatricula()' para '#dao.obterHotelPelaMatricula()''
@@ -152,6 +152,7 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
           hotel.setNome(nome);  //Alterado 'aluno' para 'hotel'
           hotel.setEmail(email);  //Alterado 'aluno' para 'hotel'
           hotel.setTelefone(telefone);  //Alterado 'aluno' para 'hotel'
+          hotel.setCep(cep);   ///ALTERADO CEP
           await this.#dao.alterar(hotel);   //Alterado 'aluno' para 'hotel'
         }
         this.#status = Status.NAVEGANDO;

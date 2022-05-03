@@ -229,7 +229,7 @@ body {
 
 
 /* CÓDIGO PARA EDITAR OS DADOS DE DENTRO DOS COMPOS DE TEXTO */
-#tfNome, #tfCnpj, #tfEmail, #tfTelefone, #tfMatricula{
+#tfNome, #tfCnpj, #tfEmail, #tfTelefone, #tfMatricula, #tfCep{
   width: 572px;
   height: 41px;
   background: #FFFFFF;
