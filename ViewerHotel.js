@@ -82,11 +82,11 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
       this.divAviso.innerHTML = " Número de Hotéis: 0";  //Alterado 'Alunos' para 'Hotéis'
     } else {
       this.tfMatricula.value = hotel.getMatricula();  //Alterado 'aluno' para 'hotel'
-      this.tfCnpj.value       = hotel.getCnpj();  //Alterado 'aluno' para 'hotel'
+      this.tfCnpj.value      = hotel.getCnpj();  //Alterado 'aluno' para 'hotel'
       this.tfNome.value      = hotel.getNome();  //Alterado 'aluno' para 'hotel'
       this.tfEmail.value     = hotel.getEmail();  //Alterado 'aluno' para 'hotel'
       this.tfTelefone.value  = hotel.getTelefone();  //Alterado 'aluno' para 'hotel'
-      this.tfCep.value       = "";  //ALTERADO CEP
+      this.tfCep.value       = hotel.getCep()"";  //ALTERADO CEP
       this.divAviso.innerHTML = "Posição: " + pos + " | Número de Hotéis: " + qtde;  //Alterado 'Alunos' para 'Hotéis'
     }
   }
@@ -112,6 +112,7 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
       this.tfNome.disabled = false;
       this.tfEmail.disabled = false;
       this.tfTelefone.disabled = false;
+      this.tfCep.disabled = false;  ///ALTERADO CEP
       this.divAviso.innerHTML = "";      
     } else {
       this.divAviso.innerHTML = "Deseja excluir este registro?";      
@@ -123,6 +124,7 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
       this.tfNome.value = "";
       this.tfEmail.value = "";
       this.tfTelefone.value = "";
+      this.tfCep.disabled = "";  ///ALTERADO CEP
     }
   }
 
@@ -138,6 +140,7 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
     this.tfNome.disabled = true;
     this.tfEmail.disabled = true;
     this.tfTelefone.disabled = true;
+    this.tfCep.disabled = true;   ///ALTERADO CEP
   }
 
 }
@@ -212,10 +215,11 @@ function fnBtOk() {
   const nome = this.viewer.tfNome.value;
   const email = this.viewer.tfEmail.value;
   const telefone = this.viewer.tfTelefone.value;
+  const cep = this.viewer.tfCep.value;  ///ALTERADO CEP
     
   // Como defini que o método "efetivar" é um dos métodos incluir, excluir ou alterar
   // não estou precisando colocar os ninhos de IF abaixo.
-  this.viewer.getCtrl().efetivar(matricula, cnpj, nome, email, telefone); 
+  this.viewer.getCtrl().efetivar(matricula, cnpj, nome, email, telefone, cep);   ///ALTERADO CEP
 
   // if(this.viewer.getCtrl().getStatus() == Status.INCLUINDO) {
   //  this.viewer.getCtrl().fnEfetivar(matricula, cpf, nome, email, telefone); 
