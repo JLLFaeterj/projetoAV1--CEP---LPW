@@ -1,13 +1,13 @@
 "use strict";
 
-import CtrlManterClientes from "/CtrlManterClientes.js";  //Alterado 'CtrlManterAlunos.js' (e sem js) para 'CtrlManterClientes'
+import CtrlManterHoteis from "/CtrlManterHoteis.js";  //Alterado 'CtrlManterAlunos.js' (e sem js) para 'CtrlManterHoteis'
 
 export default class CtrlSessao {
   
   //-----------------------------------------------------------------------------------------//
   
   constructor() {
-    this.ctrlAtual = new CtrlManterClientes();  //Alterado método 'CtrlManterAlunos()' para 'CtrlManterClientes()'
+    this.ctrlAtual = new CtrlManterHoteis();  //Alterado método 'CtrlManterAlunos()' para 'CtrlManterHoteis()'
   }
   
   //-----------------------------------------------------------------------------------------//

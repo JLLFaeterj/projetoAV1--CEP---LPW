@@ -168,11 +168,11 @@ export default class CtrlManterHoteis {  //Alterando o nome da classe para 'Ctrl
   async excluir(matr) {
     if(this.#status == Status.EXCLUINDO) {
       try {
-        let cliente = await this.#dao.obterClientePelaMatricula(matr);   //Alterado 'aluno' para 'cliente' e Alterado '#dao.obterAlunos()' para '#dao.obterClientes()''
-        if(cliente == null) {  //Alterado 'Aluno' para 'Cliente'
-          alert("Cliente com a matrícula " + matr + " não encontrado.");
+        let hotel = await this.#dao.obterHotelPelaMatricula(matr);   //Alterado 'aluno' para 'hotel' e Alterado '#dao.obterAlunoPelaMatricula' para '#dao.obterHotelePelaMatricula'.
+        if(hotel == null) {  //Alterado 'aluno' para 'hotel'
+          alert("Hotel com a matrícula " + matr + " não encontrado.");
         } else {
-          await this.#dao.excluir(cliente);  //Alterado 'Aluno' para 'Cliente'
+          await this.#dao.excluir(hotel);  //Alterado ' aluno' para 'hotel'
         }
         this.#status = Status.NAVEGANDO;
         this.#atualizarContextoNavegacao();
