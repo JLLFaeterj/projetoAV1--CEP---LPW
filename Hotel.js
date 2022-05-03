@@ -253,7 +253,7 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
   
   static validarCep(cep) {
-    if(telefone == null || telefone == "" || telefone == undefined)
+    if(cep == null || cep == "" || cep == undefined)
       return false;
     
     const regex = /[0-9]{5}-[\d]{3}/g;
