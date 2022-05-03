@@ -253,12 +253,15 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
   
   static validarCep(cep) {
+    if(telefone == null || telefone == "" || telefone == undefined)
+      return false;
+    
     const regex = /[0-9]{5}-[\d]{3}/g;
     const cep_ = cep;
-    if (regex.test(cep_)) {
-      return true;
+    if (!regex.test(cep_)) {
+      return false;
     }
-    return null;
+    return true;
   }
   
   //-----------------------------------------------------------------------------------------//
