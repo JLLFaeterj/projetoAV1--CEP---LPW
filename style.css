@@ -204,7 +204,7 @@ body {
   position: absolute;
   width: 930px;
   height: 900px;
-  margin-top: 490px;
+  margin-top: 450px;
   left: 50%;
   margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
   transform: translate(-50%, -50%) 
@@ -460,7 +460,7 @@ body {
 /* CÓDIGO PARA CENTRALIZAR A IMAGEM DE FOOTER */
 footer {
   text-align: center;
-  margin-top: 900px;
+  margin-top: 945px;
 }
 
 
