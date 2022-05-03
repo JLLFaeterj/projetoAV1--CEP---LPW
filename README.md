@@ -1,10 +1,17 @@
-# Projeto Linguagens de Programação WEB
+# Projeto Linguagens de Programação para WEB 2022
 
-1. Criar uma conta no GitHub
+## Faculdade de Educação Tecnológica do Estado do Rio de Janeiro (FAETREJ - Paracambi)
+**Disciplina:** Linguagens e Programação para WEB - LPW
 
-- Gerenciamento da Configuração:
-  - versionamento
-  - visões individuais do projeto (check in/chech out)
+**Curso:** Sistemas de Informação 
+
+**Professor:** Alessando de Almeida Castro Cerqueira
+
+**Alunos:** 
+  -Jonathas Lopes Lázari e Bruno Arruda
+
+
+
 
 2. Criar uma conta no Glitch.me
 
