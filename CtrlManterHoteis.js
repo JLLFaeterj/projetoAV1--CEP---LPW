@@ -1,27 +1,27 @@
 "use strict";
 
 import Status from "/Status.js";
-import Cliente from "/Cliente.js";   //Alterado 'Aluno' para 'Cliente'
-import DaoCliente from "/DaoCliente.js";  //Alterado 'DaoAluno' para 'DaoCliente'
-import ViewerCliente from "/ViewerCliente.js";  //Alterado 'ViewerAluno' para 'ViewerCliente'
+import Hotel from "/Hotel.js";   //Alterado 'Aluno' para 'Hotel'
+import DaoHotel from "/DaoHotel.js";  //Alterado 'DaoAluno' para 'DaoHotel'
+import ViewerHotel from "/ViewerHotel.js";  //Alterado 'ViewerAluno' para 'ViewerHotel'
 
-export default class CtrlManterClientes {  //Alterando o nome da classe para 'CtrlManterClientes'
+export default class CtrlManterHoteis {  //Alterando o nome da classe para 'CtrlManterHoteis'
   
   //-----------------------------------------------------------------------------------------//
 
   //
   // Atributos do Controlador
   //
-  #dao;      // Referência para o Data Access Object para o Store de Alunos
+  #dao;      // Referência para o Data Access Object para o Store de Hoteis
   #viewer;   // Referência para o gerenciador do viewer 
-  #posAtual; // Indica a posição do objeto Aluno que estiver sendo apresentado
+  #posAtual; // Indica a posição do objeto Hotel que estiver sendo apresentado
   #status;   // Indica o que o controlador está fazendo 
   
   //-----------------------------------------------------------------------------------------//
 
   constructor() {
-    this.#dao = new DaoCliente();  //Alterado 'DaoAluno()' para 'DaoCliente()'
-    this.#viewer = new ViewerCliente(this);  //Alterado 'ViewerAluno(this)' para 'ViewerCliente(this)'
+    this.#dao = new DaoHotel();  //Alterado 'DaoAluno()' para 'DaoHotel()'
+    this.#viewer = new ViewerHotel(this);  //Alterado 'ViewerAluno(this)' para 'ViewerHotel(this)'
     this.#posAtual = 1;
     this.#atualizarContextoNavegacao();    
   }

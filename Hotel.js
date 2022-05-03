@@ -1,6 +1,6 @@
 import ModelError from "/ModelError.js";
 
-export default class Cliente {  //ALTERADO NOME DA CLASSE
+export default class Hotel {  //ALTERADO NOME DA CLASSE
     
   //
   // DECLARAÇÃO DE ATRIBUTOS PRIVADOS: Em JavaScript, se o nome do atributo tem # no início, isso 
@@ -8,7 +8,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //
   #nome;
   #cnpj;
-  #email;  //ALTERADA ORDEM DA DEVLARAÇÃO DE VARIÁVEIS
+  #email;  //ALTERADA ORDEM DA DECLARAÇÃO DE VARIÁVEIS
   #telefone;
   #matricula;
 
@@ -31,7 +31,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   setMatricula(matr) {
-    if(!Cliente.validarMatricula(matr))  //Alterado de 'Aluno' para 'Cliente'
+    if(!Hotel.validarMatricula(matr))  //Alterado de 'Aluno' para 'Hotel'
       throw new ModelError("Matrícula Inválida: " + matr);
     this.#matricula = matr;
   }
@@ -45,8 +45,8 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   setCnpj(cnpj) {
-    if(!Cliente.validarCnpj(cnpj))   //Alterado de 'Aluno' para 'Cliente'
-      throw new ModelError("CPF Inválido: " + cnpj);
+    if(!Hotel.validarCnpj(cnpj))   //Alterado de 'Aluno' para 'Hotel'
+      throw new ModelError("CNPJ Inválido: " + cnpj);
     this.#cnpj = cnpj;
   }
   
@@ -59,7 +59,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   setNome(nome) {
-    if(!Cliente.validarNome(nome))   //Alterado de 'Aluno' para 'Cliente'
+    if(!Hotel.validarNome(nome))   //Alterado de 'Aluno' para 'Hotel'
       throw new ModelError("Nome Inválido: " + nome);
     this.#nome = nome;
   }
@@ -73,7 +73,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   setEmail(email) {
-    if(!Cliente.validarEmail(email))  //Alterado de 'Aluno' para 'Cliente'
+    if(!Hotel.validarEmail(email))  //Alterado de 'Aluno' para 'Hotel'
       throw new ModelError("Email inválido: " + email);
     this.#email = email;
   }
@@ -87,7 +87,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   setTelefone(telefone) {
-    if(!Cliente.validarTelefone(telefone))   //Alterado de 'Aluno' para 'Cliente'
+    if(!Hotel.validarTelefone(telefone))   //Alterado de 'Aluno' para 'Hotel'
       throw new ModelError("Telefone inválido: " + telefone);
     this.#telefone = telefone;
   }
@@ -107,7 +107,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Cliente(obj.matricula, obj.cnpj, obj.nome, obj.email, obj.telefone);  //Alterando nome do objeto de 'Aluno' para 'Cliente'
+    return new Hotel(obj.matricula, obj.cnpj, obj.nome, obj.email, obj.telefone);  //Alterando nome do objeto de 'Aluno' para 'Hotel'
   }
 
   //-----------------------------------------------------------------------------------------//
@@ -131,7 +131,7 @@ export default class Cliente {  //ALTERADO NOME DA CLASSE
 
   static validarCnpj(cnpj) {
     
-     if (!cnpj) return false
+  if (!cnpj) return false
 
   // Aceita receber o valor como string, número ou array com todos os dígitos
   const isString = typeof cnpj === 'string'
