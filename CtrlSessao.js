@@ -10,6 +10,7 @@ export default class CtrlSessao {
     this.ctrlAtual = new CtrlManterHoteis();  //Alterado método 'CtrlManterAlunos()' para 'CtrlManterHoteis()'
   }
   
+  
   //-----------------------------------------------------------------------------------------//
 }
 
