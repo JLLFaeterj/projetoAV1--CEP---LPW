@@ -29,10 +29,11 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
     this.btCancelar  = this.obterElemento('btCancelar');
 
     this.tfMatricula = this.obterElemento('tfMatricula');
-    this.tfCnpj       = this.obterElemento('tfCnpj');
+    this.tfCnpj      = this.obterElemento('tfCnpj');
     this.tfNome      = this.obterElemento('tfNome');
     this.tfEmail     = this.obterElemento('tfEmail');
     this.tfTelefone  = this.obterElemento('tfTelefone');
+    this.tfCep       = this.obterElemento('tfCep');   //ALTERADO CEP
       
     this.btPrimeiro.onclick = fnBtPrimeiro; 
     this.btProximo.onclick = fnBtProximo; 
@@ -73,10 +74,11 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
 
     if(hotel == null) {  //Alterado 'aluno' para 'hotel'
       this.tfMatricula.value = "";
-      this.tfCnpj.value       = "";
+      this.tfCnpj.value      = "";
       this.tfNome.value      = "";
       this.tfEmail.value     = "";
       this.tfTelefone.value  = "";
+      this.tfCep.value       = "";  //ALTERADO CEP
       this.divAviso.innerHTML = " Número de Hotéis: 0";  //Alterado 'Alunos' para 'Hotéis'
     } else {
       this.tfMatricula.value = hotel.getMatricula();  //Alterado 'aluno' para 'hotel'
@@ -84,6 +86,7 @@ export default class ViewerHotel {  //Alterado 'ViewerAluno' para 'ViewerHotel'.
       this.tfNome.value      = hotel.getNome();  //Alterado 'aluno' para 'hotel'
       this.tfEmail.value     = hotel.getEmail();  //Alterado 'aluno' para 'hotel'
       this.tfTelefone.value  = hotel.getTelefone();  //Alterado 'aluno' para 'hotel'
+      this.tfCep.value       = "";  //ALTERADO CEP
       this.divAviso.innerHTML = "Posição: " + pos + " | Número de Hotéis: " + qtde;  //Alterado 'Alunos' para 'Hotéis'
     }
   }

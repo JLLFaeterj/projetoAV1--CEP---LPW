@@ -21,7 +21,7 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
     this.setNome(nome);
     this.setEmail(email);
     this.setTelefone(telefone); 
-    this.setCep(cep)
+    this.setCep(cep);
   }
   
   //-----------------------------------------------------------------------------------------//
@@ -96,20 +96,35 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
   
   //-----------------------------------------------------------------------------------------//
 
+  getCep() {
+    return this.#cep;  ///ALTERADO CEP
+  }
+  
+  //-----------------------------------------------------------------------------------------//
+
+  setCep(cep) {
+    if(!Hotel.validarNome(cep))   //Alterado de 'Aluno' para 'Hotel'
+      throw new ModelError("Cep Inválido: " + cep);
+    this.#cep = cep;    ///LTERADO CEP
+  }
+  
+  //-----------------------------------------------------------------------------------------//
+
   toJSON() {
     return '{' +
                '"matricula" : "'+ this.#matricula + '",' +
                '"cnpj" :  "'     + this.#cnpj       + '",' +
                '"nome" : "'     + this.#nome      + '",' +
                '"email" : "'    + this.#email     + '",' +
-               '"telefone" : "' + this.#telefone  + '" ' + 
+               '"telefone" : "' + this.#telefone  + '" ' +
+               '"cep" : "' + this.#cep  + '" ' +  //ALTERADO CEP
            '}';  
   }
   
   //-----------------------------------------------------------------------------------------//
 
   static assign(obj) {
-    return new Hotel(obj.matricula, obj.cnpj, obj.nome, obj.email, obj.telefone);  //Alterando nome do objeto de 'Aluno' para 'Hotel'
+    return new Hotel(obj.matricula, obj.cnpj, obj.nome, obj.email, obj.telefone, obj.cep);  //Alterando nome do objeto de 'Aluno' para 'Hotel'  ///ALTERADO CEP
   }
 
   //-----------------------------------------------------------------------------------------//
@@ -235,6 +250,14 @@ export default class Hotel {  //ALTERADO NOME DA CLASSE
     return true;
   }
 
+  //-----------------------------------------------------------------------------------------//
+  
+  static validarCep(cep) {
+    exp = /\d{2}\.\d{3}\-\d{3}/  ///ALTERADO CEP
+        if(!exp.test(cep.value))
+                alert('Numero de Cep Invalido!');    
+  }
+  
   //-----------------------------------------------------------------------------------------//
    
   mostrar() {
