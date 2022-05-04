@@ -10,8 +10,8 @@
 **Semestre:** 22/1
 
 **Alunos:** 
-  - Jonathas Lopes Lázari: _jonathas.lazari.182si@aluno.faeterj-prc.faetec.rj.gov.br_ **1820468300031**
-  - Bruno Arruda:
+  - Jonathas Lopes Lázari: _jonathas.lazari.182si@aluno.faeterj-prc.faetec.rj.gov.br_ | Matrícula: **1820468300031**
+  - Bruno Arruda: | Matrícula: 
   
 
 
@@ -23,7 +23,11 @@ Código base utilizado: [Github Alessandro Cerqueira](https://github.com/alessan
 
 Código base para a validação do CNPJ: [Github Alex Bruno Cáceres](https://gist.github.com/alexbruno/6623b5afa847f891de9cb6f704d86d02)
 
-Site para geração de exemplos de CNPJ: [Gerador CNPJ](https://www.geradorcnpj.com/)
+Código base para a validação do CEP: [Github André Luis Zagatti Adorna](https://gist.github.com/AZagatti/c853ee3017c95d8d353b79d63d9a4d36)
+
+Site para geração de exemplos de CNPJ: [Gerador CNPJ](https://geradornv.com.br/gerador-cnpj/)
 
 Site para geração de exemplos de telefone: [Gerador Telefone](https://geradornv.com.br/gerador-telefone/)
+
+Site para geração de exemplos de CEP: [Gerador CEP](https://geradornv.com.br/gerador-cep/)
 
