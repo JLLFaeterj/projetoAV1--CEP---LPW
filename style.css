@@ -1,110 +1,11 @@
-/* Our default values set as CSS variables */
-/*:root {
-  --color-bg: #69F7BE;
-  --color-text-main: #000000;
-  --color-primary: #FFFF00;
-  --wrapper-height: 87vh;
-  --image-max-width: 300px;
-  --image-margin: 3rem;
-  --font-family: "HKGrotesk";
-  --font-family-header: "HKGrotesk";
-}
 
-@font-face {
-  font-family: HKGrotesk;
-  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
-    format("opentype");
-}
-@font-face {
-  font-family: HKGrotesk;
-  font-weight: bold;
-  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
-    format("opentype");
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: HKGrotesk;
-  /*background-color: var(--color-bg);*/
-/*}*/
-/*
-.bg {
-  background-image: url(https://cdn.glitch.global/817f33b2-b65c-4f98-b326-ec8477759be2/REDUZIDA_bg.jpg?v=1650507447060);
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-header {  
-  color: #000000;      
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 105%;
-  margin: 12px 0 12px 0;  
-  border-bottom: 4px solid #fff;
-  text-align: center;
-}
-
-footer {
-  font-size: 14px;
-  justify-content: space-between;
-  margin: 12px 0 12px 0;
-  width: 100%;
-  border-top: 4px solid #fff;
-}
-
-main div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  margin: 12px 0 0 0;
-}
-
-main div * {
-  margin: 0 6px 0 6px;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-button  {
-  font-family: HKGrotesk;
-  padding: 12px 12px;
-  font-size: 14px;
-  line-height: 1px;
-  height: 20px;
-  align-items: center;
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000;
-}
-
-button:disabled,
-button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
-div {
-  margin: 12px 0 12px 0;  
-} */
 
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Work+Sans:wght@600&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  /*analisar isso como motivo do bug do box branco. Ele anula outras configurações*/
+  box-sizing: border-box;  
   text-decoration: none;
 }
 
@@ -121,12 +22,6 @@ body {
   padding: 32px;
 }
 
-.cabecalho-logo {
-  /*line-height: 42px;*/
-
-  
-}
-
 .cabecalho-menu {
   display: flex;
   gap: 32px;
@@ -138,7 +33,6 @@ body {
   font-weight: 600;
   font-size: 22px;
   line-height: 26px;
-  /* identical to box height */
   color: #0078AB;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
 }
@@ -154,7 +48,6 @@ body {
   font-weight: 600;
   font-size: 48px;
   line-height: 80px;
-  /* identical to box height */
   color: #004A69;
 }
 
@@ -168,8 +61,6 @@ body {
   font-size: 30px;
   line-height: 50px;
   margin-left: 10px;
-  /* identical to box height */
-
   text-align: center;
   color: #004A69;
   
@@ -181,7 +72,6 @@ body {
   font-weight: 600;
   font-size: 30px;
   line-height: 50px;
-  /* identical to box height */
   text-align: left;
   color: #004A69;
   padding: 10px;
@@ -206,7 +96,7 @@ body {
   height: 900px;
   margin-top: 450px;
   left: 50%;
-  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
+  margin-right: -50%;  
   transform: translate(-50%, -50%) 
 }
 
@@ -220,7 +110,7 @@ body {
 
 .conteudo-principal-navegacao {
   display: flex;
-  flex-direction: row;   /*deletar tudo, apenas teste*/
+  flex-direction: row;   
   align-items: center;
   justify-content: space-around;
   padding-top: 32px;
@@ -404,7 +294,6 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  /*margin: 10px;*/
   border: none;
   margin-left: 20%;
   margin-right: 20%;
@@ -422,11 +311,9 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #FFFFFF;
-  /*margin: 10px;*/
   border: none;
   
 }
-
 
 
 /* CÓDIGO PARA USAR A FUNCIONALIDADE HOOVER NOS BOTÕES */
@@ -476,7 +363,7 @@ footer {
   margin-top: 250px;
   left: 50%;
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
-  margin-right: -50%;  /*MODELO DE CENTRALIZAÇÃO IDEAL*/
+  margin-right: -50%;  
   transform: translate(-50%, -50%)
   
 }

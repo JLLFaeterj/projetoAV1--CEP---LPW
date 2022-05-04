@@ -197,13 +197,13 @@ export default class DaoHotel {
       transacao.onerror = event => {
         reject(new ModelError("Não foi possível excluir o hotel", event.target.error));  
       };
-      let store = transacao.objectStore("HotelST");   //Alterado 'AlunoST' para 'HotelST'
+      let store = transacao.objectStore("HotelST");   
       let indice = store.index('idxMatricula');
-      var keyValue = IDBKeyRange.only(hotel.getMatricula());  //Alterado 'aluno' para 'hotel'
+      var keyValue = IDBKeyRange.only(hotel.getMatricula());  
       indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
-          if (cursor.value.matricula == hotel.getMatricula()) {  //Alterado 'aluno' para 'hotel'
+          if (cursor.value.matricula == hotel.getMatricula()) {  
             const request = cursor.delete();
             request.onsuccess = () => { 
               resolve("Ok"); 
@@ -211,7 +211,7 @@ export default class DaoHotel {
             return;
           }
         } else {
-          reject(new ModelError("Hotel com a matrícula " + hotel.getMatricula() + " não encontrado!",""));  //Alterado 'Aluno' para 'Hotel'. Minúsculo e maiúsculo.
+          reject(new ModelError("Hotel com a matrícula " + hotel.getMatricula() + " não encontrado!",""));  
         }
       };
     });
