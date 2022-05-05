@@ -11,7 +11,7 @@
 
 **Alunos:** 
   - Jonathas Lopes Lázari: _jonathas.lazari.182si@aluno.faeterj-prc.faetec.rj.gov.br_ | Matrícula: **1820468300031**
-  - Bruno Arruda: | Matrícula: 
+  - Bruno Arruda dos Santos: _bruno.santos.181si@aluno.faeterj-prc.faetec.rj.gov.br_ | Matrícula: **1810468300047** 
   
 
 
