@@ -15,7 +15,7 @@
   
 
 
-Site de uma agência de turismo para o cadastro de hotéis. 
+Site de uma agência de turismo para o cadastro de hotéis no banco de dados da empresa. 
 
 Trabalho de AV1, feito com base no código do professor Alessandro Cerqueira. O site autoriza `INCLUIR`, `ALTERAR` e `EXCLUIR` dados, ao mesmo tempo que permite a `NAVEGAÇÃO` dos valores já inseridos. 
 
